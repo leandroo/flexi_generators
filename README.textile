@@ -26,16 +26,18 @@ Install Resource Controller plugin:
 <pre>ruby script/plugin install git://github.com/giraffesoft/resource_controller.git</pre>
 
 Install Will Paginate plugin/Gem:
-<pre>ruby script/plugin install git://github.com/mislav/will_paginate.git</pre> or <pre>gem install will_paginate and configure your environment.rb</pre>
+<pre>ruby script/plugin install git://github.com/mislav/will_paginate.git</pre> or <pre>gem install will_paginate</pre>
+
+and configure your environment.rb
 
 h2. Usage
 
 <pre>
-	ruby script/generate flexi_layout
-	...
-	ruby script/generate flexi_authentication
-	...
-	ruby script/generate flexi_scaffold Post title:string body:text index new
+ruby script/generate flexi_layout
+...
+ruby script/generate flexi_authentication
+...
+ruby script/generate flexi_scaffold Post title:string body:text index new
 </pre>
 
 h2. TODO

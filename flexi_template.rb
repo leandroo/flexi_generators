@@ -25,6 +25,8 @@ generate :flexi_authentication
 route "map.root :controller => :home"
 
 # tasks
-#rake "jrails:js:scrub"
-#rake "jrails:js:install"
-#rake "db:migrate"
+#rake 'gems:install', :sudo => true
+#rake 'gems:unpack', :sudo => true
+#rake 'jrails:js:scrub'
+#rake 'jrails:js:install'
+#rake 'db:migrate'

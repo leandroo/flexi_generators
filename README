@@ -1,5 +1,5 @@
-Flexi-generators
-=================
+h1. Flexi Generators
+
 My Rails generator scripts (basead on nifty generators). Generate custom controllers, views, layouts and stylesheets with:
 
 * Login layout
@@ -7,35 +7,55 @@ My Rails generator scripts (basead on nifty generators). Generate custom control
 * Menus with Tab Helper plugin 
 * Controllers and views generated with Resource Controller plugin
 
+h2. Instalation
 
-Dependencies
-=================
+<pre>
+  ruby script/plugin install git://github.com/leandroo/flexi_generators.git
+</pre>
+
+
+h2. Dependencies
+
 Install Tabs Helper plugin:
-script/plugin install git://github.com/danielvlopes/tabs_helper.git
+<pre>
+	script/plugin install git://github.com/danielvlopes/tabs_helper.git
+</pre>
 
 Install Resource Controller plugin:
-script/plugin install git://github.com/giraffesoft/resource_controller.git
+<pre>
+	script/plugin install git://github.com/giraffesoft/resource_controller.git
+</pre>
 
 Install Will Paginate plugin/Gem:
-script/plugin install git://github.com/mislav/will_paginate.git
+<pre>
+	script/plugin install git://github.com/mislav/will_paginate.git
+</pre>
 or
-gem install will_paginate and configure your environment.rb
-
-Usage
-=================
-script/generate flexi_layout 
-script/generate flexi_authentication
-script/generate flexi_scaffold Post title:string body:text index new
+<pre>
+	gem install will_paginate and configure your environment.rb
+</pre>
 
 
-Included Generators
-===================
+h2. Usage
+<pre>
+	ruby script/generate flexi_layout 
+</pre>
+<pre>
+	ruby script/generate flexi_authentication
+</pre>
+<pre>
+	ruby script/generate flexi_scaffold Post title:string body:text index new
+</pre>
+
+
+h2. Included Generators
+
 * flexi_layout: generates generic layout, stylesheet, and helper files.
 * flexi_scaffold: generates a controller and optional model/migration.
 * flexi_authentication: generates user model with sign up and log in.
 
-TODO
-=================
+h2. TODO
+
 Tests, tests, tests.
 
 

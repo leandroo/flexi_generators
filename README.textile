@@ -7,11 +7,15 @@ My Rails generator scripts (basead on nifty generators). Generate custom control
 * Menus with Tab Helper plugin 
 * Controllers and views generated with Resource Controller plugin
 
+h2. Included Generators
+
+* flexi_layout: generates generic layout, stylesheet, and helper files.
+* flexi_scaffold: generates a controller and optional model/migration.
+* flexi_authentication: generates user model with sign up and log in.
+
 h2. Instalation
 
-<pre>
-  ruby script/plugin install git://github.com/leandroo/flexi_generators.git
-</pre>
+<pre>ruby script/plugin install git://github.com/leandroo/flexi_generators.git</pre>
 
 h2. Dependencies
 
@@ -22,25 +26,27 @@ Install Resource Controller plugin:
 <pre>ruby script/plugin install git://github.com/giraffesoft/resource_controller.git</pre>
 
 Install Will Paginate plugin/Gem:
-<pre>ruby script/plugin install git://github.com/mislav/will_paginate.git</pre>
-or
-<pre>gem install will_paginate and configure your environment.rb</pre>
+<pre>ruby script/plugin install git://github.com/mislav/will_paginate.git</pre> or <pre>gem install will_paginate and configure your environment.rb</pre>
 
 h2. Usage
 
-<pre>ruby script/generate flexi_layout</pre>
-<pre>ruby script/generate flexi_authentication</pre>
-<pre>ruby script/generate flexi_scaffold Post title:string body:text index new</pre>
-
-h2. Included Generators
-
-* flexi_layout: generates generic layout, stylesheet, and helper files.
-* flexi_scaffold: generates a controller and optional model/migration.
-* flexi_authentication: generates user model with sign up and log in.
+<pre>
+	ruby script/generate flexi_layout
+	...
+	ruby script/generate flexi_authentication
+	...
+	ruby script/generate flexi_scaffold Post title:string body:text index new
+</pre>
 
 h2. TODO
 
 Tests, tests, tests.
 
- 
+h2. Autor
+
+*Leandro de Oliveira*
+
+Blog: "http://leandroo.com.br":http://leandroo.com.br
+Github: "http://github.com/leandroo":http://github.com/leandroo
+
 Copyright (c) 2009 Leandro de Oliveira, released under the MIT license

@@ -8,15 +8,15 @@ class <%= controller_class_name %>Controller < ResourceController::Base
   end 
   
   create do
-    flash "<%= singular_name %> salva com sucesso!"
+    flash "<%= singular_name.capitalize %> salva com sucesso!"
   end
   
   update do
-    flash "<%= singular_name %> alterada com sucesso!"
+    flash "<%= singular_name.capitalize %> alterada com sucesso!"
   end
   
   destroy do
-    flash "<%= singular_name %> excluída com sucesso!"
+    flash "<%= singular_name.capitalize %> excluída com sucesso!"
   end
   
   create.response do |wants|

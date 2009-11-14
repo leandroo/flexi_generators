@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title><%%= "Área administrativa - #{h(yield(:title))}" %></title>
+    <%%= stylesheet_link_tag 'application' %>
+    <%%= yield(:head) %>
+  </head>
+  <body>
+  	<div id="header">
+  		<%%= link_to image_tag("logo.png"), root_path %>
+  	</div>
+	<div id="container">
+		<div id="sidenav">
+			<%% tabs do |tab| %>
+			  <%%= tab.menu1 'Menu1', "#menu" %>
+			  <%%= tab.menu2 'Menu2', "#menu" %>
+			  <%%= tab.menu3 'Menu3', "#menu" %>
+			  <%%= tab.menu4 'Menu4', "#menu" %>
+			<%% end %>			
+  		</div>  		
+  		<div id="main">	      
+	      <%%- if show_title? -%>
+	      	<div id="title_box">
+	        	<h2><%%=h yield(:title) %></h2>
+			</div>     
+	      <%%- end -%>
+	      <%%- flash.each do |name, msg| -%>
+		   	<%%= content_tag :div, msg, :id => "flash_#{name}" %>
+		  <%%- end -%>   
+	      
+	      <%%= yield %>
+	     </div>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+<%% title("Nova <%= singular_name.titleize %>") %>
+
+<%% form_for(:<%= singular_name %>, :url => collection_url) do |f| %>
+  <%%= render :partial => "form", :locals => { :f => f } %>
+  <div id="control_box">
+    <%%= submit_tag "Salvar" %> | <%%= link_to 'Cancelar', collection_url %>
+  </div>
+<%% end %>
+

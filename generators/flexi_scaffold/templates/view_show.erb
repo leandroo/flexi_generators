@@ -1,0 +1,9 @@
+<% for attribute in attributes -%>
+<p>
+  <strong><%= attribute.column.human_name %>:</strong><%%=h @<%= singular_name %>.<%= attribute.name %> %>
+</p>
+<% end -%>
+<div id="control_box">
+	<%%= link_to 'Editar', edit_object_url %> | <%%= link_to 'Cancelar', collection_url %>
+</div>
+

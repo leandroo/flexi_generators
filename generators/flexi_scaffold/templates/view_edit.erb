@@ -1,0 +1,7 @@
+<%% title("Editando <%= singular_name.titleize %>") %>
+<%% form_for(:<%= singular_name %>, :url => object_url, :html => { :method => :put }) do |f| %>
+  <%%= render :partial => "form", :locals => { :f => f } %>
+  <div id="control_box">
+    <%%=submit_tag "Alterar" %> | <%%= link_to 'Cancelar', collection_url %>
+  </div>
+<%% end %>

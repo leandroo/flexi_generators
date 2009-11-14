@@ -1,0 +1,25 @@
+<%% title("<%= plural_name.titleize %>") %>
+
+<div id="new_box">
+	<%%= link_to 'Nova <%= singular_name.titleize %>', new_object_url, :class=>'new' %>
+</div>	
+
+<table cellspacing="1" cellpadding="2">
+  <tr>
+<% for attribute in attributes -%>
+    <th><%= attribute.column.human_name %></th>
+<% end -%>
+    <th></th>
+    <th></th>
+  </tr>
+  <%%- @<%= plural_name %>.each do |<%= singular_name %>|%>
+    <tr>
+    <%- for attribute in attributes -%>
+      <td><%%=h <%= singular_name %>.<%= attribute.name %> %></td>
+    <%- end -%>    
+      <td width="8%"><%%=link_to 'Editar', edit_object_url(<%= singular_name %>), :class=>'edit' %></td>
+      <td width="8%"><%%=link_to 'Excluir', object_url(<%= singular_name %>), :class=>'delete', :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
+    </tr>
+  <%% end %>
+</table>
+<%%= will_paginate @<%= plural_name %>, :prev_label=>'&laquo; Anterior', :next_label=>'Próximo &raquo;' %>

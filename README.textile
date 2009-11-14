@@ -13,40 +13,24 @@ h2. Instalation
   ruby script/plugin install git://github.com/leandroo/flexi_generators.git
 </pre>
 
-
 h2. Dependencies
 
 Install Tabs Helper plugin:
-<pre>
-	script/plugin install git://github.com/danielvlopes/tabs_helper.git
-</pre>
+<pre>ruby script/plugin install git://github.com/danielvlopes/tabs_helper.git</pre>
 
 Install Resource Controller plugin:
-<pre>
-	script/plugin install git://github.com/giraffesoft/resource_controller.git
-</pre>
+<pre>ruby script/plugin install git://github.com/giraffesoft/resource_controller.git</pre>
 
 Install Will Paginate plugin/Gem:
-<pre>
-	script/plugin install git://github.com/mislav/will_paginate.git
-</pre>
+<pre>ruby script/plugin install git://github.com/mislav/will_paginate.git</pre>
 or
-<pre>
-	gem install will_paginate and configure your environment.rb
-</pre>
-
+<pre>gem install will_paginate and configure your environment.rb</pre>
 
 h2. Usage
-<pre>
-	ruby script/generate flexi_layout 
-</pre>
-<pre>
-	ruby script/generate flexi_authentication
-</pre>
-<pre>
-	ruby script/generate flexi_scaffold Post title:string body:text index new
-</pre>
 
+<pre>ruby script/generate flexi_layout</pre>
+<pre>ruby script/generate flexi_authentication</pre>
+<pre>ruby script/generate flexi_scaffold Post title:string body:text index new</pre>
 
 h2. Included Generators
 
@@ -58,5 +42,5 @@ h2. TODO
 
 Tests, tests, tests.
 
-
+ 
 Copyright (c) 2009 Leandro de Oliveira, released under the MIT license

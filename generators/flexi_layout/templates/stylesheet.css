@@ -11,6 +11,16 @@ body {
   background-repeat:repeat-x;
 }
 
+div#top_nav{ 
+	text-align: right; 
+	width: 835px; 
+	margin: 0 auto; 
+	border-bottom:1px solid #E5E5E5;
+	margin-bottom: 10px;
+}
+.logout{ color:#D30000; }
+.login{ }
+
 div#header{ width: 800px; margin: 0 auto; }
 
 div#control_box {

@@ -12,7 +12,7 @@ class <%= session_plural_class_name %>Controller < ApplicationController
     @<%= session_singular_name %> = <%= session_class_name %>.new(params[:<%= session_singular_name %>])
     if @<%= session_singular_name %>.save
       flash[:notice] = "Bem vindo!"
-      redirect_to admin_home_url
+      redirect_to_target_or_default(root_url)
     else
       flash.now[:error] = "Login ou senha inválidos."
       render :action => 'new'
@@ -38,7 +38,7 @@ class <%= session_plural_class_name %>Controller < ApplicationController
     if <%= user_singular_name %>
       session[:<%= user_singular_name %>_id] = <%= user_singular_name %>.id
       flash[:notice] = "Bem vindo!"
-      redirect_to_target_or_default(root_url)
+      redirect_to admin_home_url
     else
       flash.now[:error] = "Login ou senha inválidos."
       render :action => 'new'

@@ -15,7 +15,7 @@ class FlexiLayoutGenerator < Rails::Generator::Base
       m.template "layout_login.html.erb", "app/views/layouts/login.html.erb"
 	  m.template "layout_site.html.erb", "app/views/layouts/site.html.erb"
 	  m.template "home_index.html.erb", "app/views/home/index.html.erb"
-	  m.template "admin_home_index.html.erb", "app/views/home/admin/index.html.erb"	  
+	  m.template "admin_home_index.html.erb", "app/views/admin/home/index.html.erb"	  
 	  m.file     "admin_home_controller.rb", "app/controllers/admin/home_controller.rb"	  
 	  m.file     "home_controller.rb", "app/controllers/home_controller.rb"
 	  m.file     "home_helper.rb", "app/helpers/home_helper.rb"	  	  	  

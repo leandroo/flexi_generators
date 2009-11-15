@@ -36,9 +36,9 @@ class FlexiAuthenticationGenerator < Rails::Generator::Base
       m.route_resources session_plural_name
       m.route_name :login, 'login', :controller => session_plural_name, :action => 'new'
       m.route_name :logout, 'logout', :controller => session_plural_name, :action => 'destroy'
-      m.route_name :signup, 'signup', :controller => user_plural_name, :action => 'new'
       
       m.insert_into "app/controllers/#{application_controller_name}.rb", 'include Authentication'
+	  m.insert_into "app/controllers/#{application_controller_name}.rb", 'before_filter :login_required'      
       
       if test_framework == :rspec
         m.directory "spec"

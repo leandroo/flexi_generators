@@ -5,14 +5,16 @@
 <%% form_for @<%= session_singular_name %> do |f| %>
   <%%= f.error_messages %>
   <p>
-    <%%= f.label :username %><br />
+    <%%= f.label :username, "Usuário:" %><br />
     <%%= f.text_field :username %>
   </p>
   <p>
-    <%%= f.label :password %><br />
+    <%%= f.label :password, "Senha:" %><br />
     <%%= f.password_field :password %>
   </p>
-  <p><%%= f.submit "Log in" %></p>
+  <div id="control_box">
+  	<%%= f.submit "Acessar" %>
+  </div>
 <%% end %>
 
 <%- else -%>

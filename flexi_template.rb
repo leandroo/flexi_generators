@@ -17,12 +17,8 @@ gem 'mislav-will_paginate', :lib=>'will_paginate', :version=> '2.3.11'
 environment %(config.i18n.default_locale = "pt-BR")
 
 # generators
-generate :controller, "home", "index"
 generate :flexi_layout
 generate :flexi_authentication
-
-# routes
-route "map.root :controller => :home"
 
 # tasks
 #rake 'gems:install', :sudo => true

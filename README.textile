@@ -9,9 +9,9 @@ My Rails generator scripts (basead on nifty generators). Generate custom control
 
 h2. Included Generators
 
+* flexi_authentication: generates user model with sign up and log in.
 * flexi_layout: generates generic layout, stylesheet, and helper files.
 * flexi_scaffold: generates a controller and optional model/migration.
-* flexi_authentication: generates user model with sign up and log in.
 
 h2. Instalation
 
@@ -45,15 +45,18 @@ ruby script/generate flexi_scaffold Post title:string body:text index new
 
 h2. Screenshots
 
-!http://img69.imageshack.us/img69/192/flexihome.png(Home layout)!
+!http://img30.imageshack.us/img30/192/flexihome.png(Home layout)!
 
-!http://img30.imageshack.us/img30/3931/flexilogin.png(Login layout)!
+!http://img198.imageshack.us/img198/3931/flexilogin.png(Login layout)!
 
-!http://img137.imageshack.us/img137/1385/flexiadmin.png(Admin layout)!
+!http://img39.imageshack.us/img39/1385/flexiadmin.png(Admin layout)!
+
+!http://img682.imageshack.us/img682/1679/flexiscaffold.png(Scaffold layout)!
 
 h2. TODO
 
-Tests, tests, tests.
+* i18n
+* tests, tests, tests
 
 h2. Autor
 

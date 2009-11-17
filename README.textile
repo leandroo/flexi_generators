@@ -17,6 +17,9 @@ h2. Instalation
 
 <pre>ruby script/plugin install git://github.com/leandroo/flexi_generators.git</pre>
 
+Recommended instalation with Rails application template:
+<pre>rails appname -m http://github.com/leandroo/flexi_generators/raw/master/flexi_template.rb</pre>
+
 h2. Dependencies
 
 Install Tabs Helper plugin:
@@ -39,6 +42,14 @@ ruby script/generate flexi_authentication
 ...
 ruby script/generate flexi_scaffold Post title:string body:text index new
 </pre>
+
+h2. Screenshots
+
+!http://img69.imageshack.us/img69/192/flexihome.png(Home layout)!
+
+!http://img30.imageshack.us/img30/3931/flexilogin.png(Login layout)!
+
+!http://img137.imageshack.us/img137/1385/flexiadmin.png(Admin layout)!
 
 h2. TODO
 

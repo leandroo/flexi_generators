@@ -13,21 +13,23 @@ h2. Included Generators
 * flexi_layout: generates generic layout, stylesheet, and helper files.
 * flexi_scaffold: generates a controller and optional model/migration.
 
-h2. Instalation
+h2. Quickstart 
 
-Instalation with Rails application template (Recommended):
-<pre>rails appname -m http://github.com/leandroo/flexi_generators/raw/master/flexi_template.rb</pre> or
-<pre>ruby script/plugin install git://github.com/leandroo/flexi_generators.git</pre>
+1. Install all dependencies with Rails application template:
+<pre>rails appname -m http://github.com/leandroo/flexi_generators/raw/master/flexi_template.rb</pre>
+2. Open a shell and run <pre>rake db:migrate</pre> to create your database and setup the prepared defaults.
+3. Start your server with <pre>./script/server</pre>
+4. Open up http://localhost:3000
 
 h2. Dependencies
 
-Install Tabs Helper plugin:
+Tabs Helper plugin:
 <pre>ruby script/plugin install git://github.com/danielvlopes/tabs_helper.git</pre>
 
-Install Resource Controller plugin:
+Resource Controller plugin:
 <pre>ruby script/plugin install git://github.com/giraffesoft/resource_controller.git</pre>
 
-Install Will Paginate plugin/Gem:
+Will Paginate plugin/Gem:
 <pre>ruby script/plugin install git://github.com/mislav/will_paginate.git</pre> or <pre>gem install will_paginate</pre>
 
 and configure your environment.rb
@@ -39,7 +41,7 @@ ruby script/generate flexi_layout
 ...
 ruby script/generate flexi_authentication
 ...
-ruby script/generate flexi_scaffold Post title:string body:text index new
+ruby script/generate flexi_scaffold Post title:string body:text
 </pre>
 
 h2. Screenshots
@@ -55,6 +57,7 @@ h2. Screenshots
 h2. TODO
 
 * Support i18n
+* Manage users
 * Tests, tests, tests
 
 h2. Autor

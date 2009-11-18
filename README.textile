@@ -15,22 +15,19 @@ h2. Included Generators
 
 h2. Quickstart 
 
-1. Install all dependencies with Rails application template
+1. Install all dependencies with Rails application template:
 @rails appname -m http://github.com/leandroo/flexi_generators/raw/master/flexi_template.rb@
-2. Open a shell and run @rake db:migrate@> to create your database and setup the prepared defaults.
+2. Open a shell and run @rake db:migrate@ to create your database and setup the prepared defaults.
 3. Start your server with @./script/server@
 4. Open up "http://localhost:3000":http://localhost:3000
 
 h2. Dependencies
 
-Tabs Helper plugin:
-<pre>ruby script/plugin install git://github.com/danielvlopes/tabs_helper.git</pre>
+Tabs Helper plugin: @ruby script/plugin install git://github.com/danielvlopes/tabs_helper.git@
 
-Resource Controller plugin:
-<pre>ruby script/plugin install git://github.com/giraffesoft/resource_controller.git</pre>
+Resource Controller plugin: @ruby script/plugin install git://github.com/giraffesoft/resource_controller.git@
 
-Will Paginate plugin/Gem:
-<pre>ruby script/plugin install git://github.com/mislav/will_paginate.git</pre> or <pre>gem install will_paginate</pre>
+Will Paginate plugin/Gem: @ruby script/plugin install git://github.com/mislav/will_paginate.git@ or @gem install will_paginate@
 
 and configure your environment.rb
 

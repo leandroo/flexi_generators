@@ -25,11 +25,9 @@ These 4 simple steps are the essentials to get you smoothly up and running…
 
 h2. Dependencies
 
-Tabs Helper plugin: http://github.com/danielvlopes/tabs_helper
-
-Resource Controller plugin: http://github.com/giraffesoft/resource_controller
-
-Will Paginate plugin/gem: http://github.com/mislav/will_paginate
+* Tabs Helper plugin: http://github.com/danielvlopes/tabs_helper
+* Resource Controller plugin: http://github.com/giraffesoft/resource_controller
+* Will Paginate plugin/gem: http://github.com/mislav/will_paginate
 
 h2. Usage
 

@@ -16,8 +16,7 @@ h2. Included Generators
 h2. Instalation
 
 Instalation with Rails application template (Recommended):
-<pre>rails appname -m http://github.com/leandroo/flexi_generators/raw/master/flexi_template.rb</pre>
-or
+<pre>rails appname -m http://github.com/leandroo/flexi_generators/raw/master/flexi_template.rb</pre> or
 <pre>ruby script/plugin install git://github.com/leandroo/flexi_generators.git</pre>
 
 h2. Dependencies

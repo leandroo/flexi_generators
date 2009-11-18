@@ -19,7 +19,7 @@ These 4 simple steps are the essentials to get you smoothly up and running…
 
 1. Create your app and configure all dependencies 
 @rails appname -m http://github.com/leandroo/flexi_generators/raw/master/flexi_template.rb@
-2. Open a shell and run @rake gems:install@ and @rake db:migrate@ to create your database and installs all required gems
+2. Run @rake gems:install@ and @rake db:migrate@ to create your database and installs all required gems
 3. Start your server with @ruby script/server@
 4. Open up "http://localhost:3000":http://localhost:3000
 

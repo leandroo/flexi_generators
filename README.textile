@@ -17,9 +17,10 @@ h2. Quickstart
 
 1. Install all dependencies with Rails application template:
 @rails appname -m http://github.com/leandroo/flexi_generators/raw/master/flexi_template.rb@
-2. Open a shell and run @rake db:migrate@ to create your database and setup the prepared defaults.
-3. Start your server with @./script/server@
-4. Open up "http://localhost:3000":http://localhost:3000
+2. @rake gems:install@
+3. Open a shell and run @rake db:migrate@ to create your database and setup the prepared defaults.
+4. Start your server with @./script/server@
+5. Open up "http://localhost:3000":http://localhost:3000
 
 h2. Dependencies
 

@@ -11,7 +11,7 @@ class <%= session_plural_class_name %>Controller < ApplicationController
   def create
     @<%= session_singular_name %> = <%= session_class_name %>.new(params[:<%= session_singular_name %>])
     if @<%= session_singular_name %>.save
-      flash[:notice] = "Bem vindo!"
+      flash[:notice] = "Bem-vindo!"
       redirect_to_target_or_default(root_url)
     else
       flash.now[:error] = "Usuário/E-mail ou senha inválidos."
@@ -37,7 +37,7 @@ class <%= session_plural_class_name %>Controller < ApplicationController
     <%= user_singular_name %> = <%= user_class_name %>.authenticate(params[:login], params[:password])
     if <%= user_singular_name %>
       session[:<%= user_singular_name %>_id] = <%= user_singular_name %>.id
-      flash[:notice] = "Bem vindo!"
+      flash[:notice] = "Bem-vindo!"
       redirect_to admin_home_url
     else
       flash.now[:error] = "Usuário/E-mail  ou senha inválidos."

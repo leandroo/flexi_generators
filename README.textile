@@ -45,7 +45,7 @@ h2. Screenshots
 
 !http://img198.imageshack.us/img198/3931/flexilogin.png(Login layout)!
 
-!http://img39.imageshack.us/img39/1385/flexiadmin.png(Admin layout)!
+!http://img22.imageshack.us/img22/9846/adminlayout.png(Admin layout)!
 
 !http://img682.imageshack.us/img682/1679/flexiscaffold.png(Scaffold layout)!
 

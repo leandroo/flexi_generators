@@ -1,0 +1,23 @@
+<%% title("Novo Usuário") %>
+
+<%% form_for(@user, :url => admin_users_url ) do |f| %>	
+  <p>
+	<%%= f.label :username, "Usuário:" %><br />
+    <%%= f.text_field :username %>
+  </p>
+  <p>
+    <%%= f.label :email, "E-mail:" %><br />
+    <%%= f.text_field :email %>
+  </p>
+  <p>
+    <%%= f.label :password, "Senha:" %><br />
+    <%%= f.password_field :password %>
+  </p>
+  <p>
+    <%%= f.label :password_confirmation, "Confirmar Senha:" %><br />
+    <%%= f.password_field :password_confirmation %>
+  </p>
+  <div id="control_box">
+    <%%= submit_tag "Salvar" %> | <%%= link_to 'Cancelar', admin_users_url %>
+  </div>
+<%% end %>

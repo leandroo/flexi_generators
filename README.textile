@@ -52,7 +52,6 @@ h2. Screenshots
 h2. TODO
 
 * Support i18n
-* Manage users
 * Tests, tests, tests
 
 h2. Autor

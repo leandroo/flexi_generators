@@ -18,8 +18,8 @@ div#top_nav{
 	border-bottom:1px solid #E5E5E5;
 	margin-bottom: 10px;
 }
-.logout{ color:#D30000; }
-.login{ }
+.logout{ color:#D30000; font-weight:bold;}
+.login{ font-weight:bold; }
 
 div#header{ width: 800px; margin: 0 auto; }
 

@@ -26,7 +26,7 @@ class Admin::UsersController < ApplicationController
       
     respond_to do |format|
       if @user.save
-      	session[:user_id] = @user.id
+      	#session[:user_id] = @user.id
         flash[:notice] = "Usuário adicionado com sucesso!"
         format.html { redirect_to (admin_users_url) }
       else

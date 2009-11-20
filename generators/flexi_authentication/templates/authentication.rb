@@ -42,7 +42,7 @@ module Authentication
   
   def login_required
     unless logged_in?
-      flash[:error] = "É necessário efetuar a autenticação para ter acesso a esta página."
+      flash[:error] = "É necessária a autenticação para ter acesso a esta página."
       store_target_location
       redirect_to login_url
     end

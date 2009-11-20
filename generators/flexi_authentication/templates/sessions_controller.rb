@@ -14,7 +14,7 @@ class <%= session_plural_class_name %>Controller < ApplicationController
       flash[:notice] = "Bem vindo!"
       redirect_to_target_or_default(root_url)
     else
-      flash.now[:error] = "Login ou senha inválidos."
+      flash.now[:error] = "Usuário/E-mail ou senha inválidos."
       render :action => 'new'
     end
   end
@@ -22,7 +22,7 @@ class <%= session_plural_class_name %>Controller < ApplicationController
   def destroy
     @<%= session_singular_name %> = <%= session_class_name %>.find
     @<%= session_singular_name %>.destroy
-    flash[:notice] = "Você foi desconectado."
+    flash[:notice] = ""
     redirect_to root_url
   end
 <%- else -%>
@@ -40,14 +40,14 @@ class <%= session_plural_class_name %>Controller < ApplicationController
       flash[:notice] = "Bem vindo!"
       redirect_to admin_home_url
     else
-      flash.now[:error] = "Login ou senha inválidos."
+      flash.now[:error] = "Usuário/E-mail  ou senha inválidos."
       render :action => 'new'
     end
   end
   
   def destroy
     session[:<%= user_singular_name %>_id] = nil
-    flash[:notice] = "Você foi desconectado."
+    flash[:notice] = ""
     redirect_to root_url
   end
 <%- end -%>

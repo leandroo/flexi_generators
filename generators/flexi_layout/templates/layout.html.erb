@@ -20,6 +20,7 @@
 	<div id="container">
 		<div id="sidenav">
 			<%% tabs do |tab| %>
+			  <%%= tab.users 'Usuários', admin_users_path %>
 			  <%%= tab.menu1 'Menu1', "#menu" %>
 			  <%%= tab.menu2 'Menu2', "#menu" %>
 			  <%%= tab.menu3 'Menu3', "#menu" %>

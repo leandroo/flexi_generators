@@ -4,13 +4,13 @@ class FlexiLayoutGenerator < Rails::Generator::Base
   
   def manifest
     record do |m|
-      m.directory 'app/views/layouts'
-      m.directory 'public/stylesheets'
-      m.directory 'public/images'
-      m.directory 'app/helpers'
-      m.directory 'app/views/home'
-      m.directory 'app/views/admin/home'
-      m.directory 'app/controllers/admin'
+      m.directory "app/views/layouts"
+      m.directory "public/stylesheets"
+      m.directory "public/images"
+      m.directory "app/helpers"
+      m.directory "app/views/home"
+      m.directory "app/views/admin/home"
+      m.directory "app/controllers/admin"
       m.template "layout.html.erb", "app/views/layouts/application.html.erb"
       m.template "layout_login.html.erb", "app/views/layouts/login.html.erb"
 	  m.template "layout_site.html.erb", "app/views/layouts/site.html.erb"
@@ -33,6 +33,7 @@ class FlexiLayoutGenerator < Rails::Generator::Base
       m.route    "map.admin 'admin', :controller => 'sessions', :action => 'new'"
       m.route    "map.namespace :admin do |admin|
   	admin.home 'home', :controller => 'home', :action => 'index'
+  	admin.resources :users
   end"             
     end
   end

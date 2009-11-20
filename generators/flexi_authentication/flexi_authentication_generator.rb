@@ -5,7 +5,8 @@ class FlexiAuthenticationGenerator < Rails::Generator::Base
   def initialize(runtime_args, runtime_options = {})
     super
     
-    @user_name = @args[0] || 'user'
+    #@user_name = @args[0] || 'user'
+    @user_name =  'user'
     @session_name = @args[1] || (options[:authlogic] ? @user_name + '_session' : 'session')
   end
   
@@ -13,16 +14,20 @@ class FlexiAuthenticationGenerator < Rails::Generator::Base
     record do |m|
       m.directory "app/models"
       m.directory "app/controllers"
+      m.directory "app/controllers/admin"
       m.directory "app/helpers"
       m.directory "app/views"
+      m.directory "app/views/admin"
       m.directory "lib"
-      
-      m.directory "app/views/#{user_plural_name}"
+      m.directory "app/views/admin/#{user_plural_name}"
       m.template "user.rb", "app/models/#{user_singular_name}.rb"
       m.template "authlogic_session.rb", "app/models/#{user_singular_name}_session.rb" if options[:authlogic]
-      m.template "users_controller.rb", "app/controllers/#{user_plural_name}_controller.rb"
       m.template "users_helper.rb", "app/helpers/#{user_plural_name}_helper.rb"
-      m.template "views/erb/signup.html.erb", "app/views/#{user_plural_name}/new.html.erb"
+      #admin_user
+      m.template "admin_users_controller.rb", "app/controllers/admin/#{user_plural_name}_controller.rb"
+      m.template "views/erb/admin_user_index.html.erb", "app/views/admin/#{user_plural_name}/index.html.erb"
+      m.template "views/erb/admin_user_new.html.erb", "app/views/admin/#{user_plural_name}/new.html.erb"
+      m.template "views/erb/admin_user_edit.html.erb", "app/views/admin/#{user_plural_name}/edit.html.erb"
       
       m.directory "app/views/#{session_plural_name}"
       m.template "sessions_controller.rb", "app/controllers/#{session_plural_name}_controller.rb"
@@ -110,7 +115,7 @@ protected
     opt.on("--testunit", "Use test/unit for test files.") { options[:test_framework] = :testunit }
     opt.on("--rspec", "Use RSpec for test files.") { options[:test_framework] = :rspec }
     opt.on("--shoulda", "Use Shoulda for test files.") { options[:test_framework] = :shoulda }
-    opt.on("--authlogic", "Use Authlogic for authentication.") { |v| options[:authlogic] = true }
+    #opt.on("--authlogic", "Use Authlogic for authentication.") { |v| options[:authlogic] = true }
   end
   
   def banner

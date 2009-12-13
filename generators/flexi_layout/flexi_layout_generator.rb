@@ -25,7 +25,7 @@ class FlexiLayoutGenerator < Rails::Generator::Base
       m.file     "logo.png",  "public/images/logo.png"
       m.file     "add.png",  "public/images/add.png"
       m.file     "users.png",  "public/images/users.png"
-      m.file     "bg_cinza.png",  "public/images/bg_cinza.png"
+      m.file     "bg_cinza.png",  "public/images/bg.png"
       m.file     "helper.rb", "app/helpers/layout_helper.rb"
       m.file     "custom_field_error.rb", "config/initializers/custom_field_error.rb"
       m.file     "inflector_portuguese.rb", "config/initializers/inflector_portuguese.rb"

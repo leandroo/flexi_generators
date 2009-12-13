@@ -21,12 +21,13 @@ module Inflector
     inflect.plural(/ão$/i,  'ões')
     inflect.plural(/^(irm|m)ão$/i,  '\1ãos')
     inflect.plural(/^(alem|c|p)ão$/i,  '\1ães')
-    
+    inflect.plural(/or$/i,  'ores')
     # Sem acentos...
     inflect.plural(/ao$/i,  'oes')
     inflect.plural(/^(irm|m)ao$/i,  '\1aos')
     inflect.plural(/^(alem|c|p)ao$/i,  '\1aes')
     
+    inflect.singular(/ores$/i,  'or')
     inflect.singular(/([^ê])s$/i, '\1')
     inflect.singular(/^(á|gá|paí)s$/i, '\1s')
     inflect.singular(/(r|z)es$/i, '\1')

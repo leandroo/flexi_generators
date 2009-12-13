@@ -8,7 +8,7 @@ class <%= controller_class_name %>Controller < ResourceController::Base
   end 
   
   create do
-    flash "<%= singular_name.capitalize %> salva com sucesso!"
+    flash "<%= singular_name.capitalize %> adicionada com sucesso!"
   end
   
   update do

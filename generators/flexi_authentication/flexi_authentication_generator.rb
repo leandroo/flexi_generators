@@ -37,7 +37,6 @@ class FlexiAuthenticationGenerator < Rails::Generator::Base
       m.template "authentication.rb", "lib/authentication.rb"
       m.migration_template "migration.rb", "db/migrate", :migration_file_name => "create_#{user_plural_name}"
       
-      m.route_resources user_plural_name
       m.route_resources session_plural_name
       m.route_name :login, 'login', :controller => session_plural_name, :action => 'new'
       m.route_name :logout, 'logout', :controller => session_plural_name, :action => 'destroy'

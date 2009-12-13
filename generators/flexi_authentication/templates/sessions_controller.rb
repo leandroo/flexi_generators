@@ -22,7 +22,6 @@ class <%= session_plural_class_name %>Controller < ApplicationController
   def destroy
     @<%= session_singular_name %> = <%= session_class_name %>.find
     @<%= session_singular_name %>.destroy
-    flash[:notice] = ""
     redirect_to root_url
   end
 <%- else -%>

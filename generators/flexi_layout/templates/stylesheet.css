@@ -52,7 +52,7 @@ div#new_box { padding:15px 5px 5px 5px; }
 
 .pagination{ margin-top: 15px; text-align: center; }
 
-label { font-weight:bold; vertical-align: center;}
+label { font-weight:bold;}
 
 h1, h2 { padding:2px; margin:2px; }
 
@@ -114,11 +114,11 @@ a { color: #0000FF; }
   border: solid 5px #E4E2E2;
 }
 
-#flash_notice, #flash_error { padding: 5px 8px; margin: 10px 0;}
+#flash_notice, #flash_error { padding: 10px; margin: 10px 0;}
 
-#flash_notice {background-color: #CFC; border: solid 1px #6C6; }
+#flash_notice {background-color: #CFC; border: solid 1px #6C6; 	color: #1E5F1D; }
 
-#flash_error { background-color: #FCC; border: solid 1px #C66; }
+#flash_error { background-color: #FCC; border: solid 1px #C66; color:#9E0B0F;  }
 
 .fieldWithErrors { display: inline; }
 

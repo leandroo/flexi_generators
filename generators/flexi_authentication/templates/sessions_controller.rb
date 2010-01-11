@@ -46,7 +46,6 @@ class <%= session_plural_class_name %>Controller < ApplicationController
   
   def destroy
     session[:<%= user_singular_name %>_id] = nil
-    flash[:notice] = ""
     redirect_to root_url
   end
 <%- end -%>

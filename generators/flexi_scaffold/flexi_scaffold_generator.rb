@@ -134,9 +134,9 @@ class FlexiScaffoldGenerator < Rails::Generator::Base
   def render_form
     if form_partial?
       if options[:haml]
-        "= render :partial => 'form'"
+        "= render :partial => 'form', :locals => { :f => f }"
       else
-        "<%= render :partial => 'form' %>"
+        "<%= render :partial => 'form', :locals => { :f => f } %>"
       end
     else
       read_template("views/#{view_language}/_form.html.#{view_language}")

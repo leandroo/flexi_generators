@@ -90,8 +90,8 @@ a { color: #0000FF; }
 	padding-left: 10px;
 	color: #4E5660;
 }
-#sidenav li a:hover { background: #FDFCF6; }
-#sidenav li.current a {background: #F0F7FA; color: #000; }
+#sidenav li a:hover { background: #FFFADF; }
+#sidenav li.current a {background: #DFF6FF; color: #000; }
 
 #main{
   width: 633px;
@@ -102,7 +102,7 @@ a { color: #0000FF; }
 #main table { width: 100%; }
 #main table th { background-color: #F3F3F3 }
 #main table tr td { border-bottom: 1px solid #DDDDDD; }
-#main table tr:hover td { background: #FDFCF6 none repeat scroll 0 0; }
+#main table tr:hover td { background: #FFFADF none repeat scroll 0 0; }
 
 #container {
   width: 800px;

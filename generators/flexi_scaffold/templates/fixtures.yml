@@ -1,10 +1,9 @@
 one:
-  id: 1
-<% for attribute in attributes -%>
+<%- for attribute in attributes -%>
   <%= attribute.name %>: <%= attribute.default %>
-<% end -%>
+<%- end -%>
+
 two:
-  id: 2
-<% for attribute in attributes -%>
+<%- for attribute in attributes -%>
   <%= attribute.name %>: <%= attribute.default %>
-<% end -%>
+<%- end -%>

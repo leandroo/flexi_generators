@@ -39,6 +39,7 @@ div#title_box {
 
 div#new_box { padding:15px 5px 5px 5px; }
 
+.view{color: #0085CF;}
 .edit{color:#C5A059;}
 .delete{color:#A02B2B;}
 .new{

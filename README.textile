@@ -12,6 +12,7 @@ h2. Included Generators
 * flexi_authentication: generates user model with sign up and log in.
 * flexi_layout: generates generic layout, stylesheet, and helper files.
 * flexi_scaffold: generates a controller and optional model/migration.
+* flexi_resource_scaffold: generates a controller and optional model/migration (resource_controller plugin).
 
 h2. Quickstart 
 

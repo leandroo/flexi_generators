@@ -1,7 +1,10 @@
-<%% title "New <%= singular_name.titleize %>" %>
+<%% title("Nova <%= singular_name.titleize %>") %>
 
-<%= render_form %>
+<%% form_for @<%= singular_name %> do |f| %>	
+  <%= render_form %>
+  <div id="control_box">
+    <%%= submit_tag "Salvar" %> | <%- if action? :index -%> <%%= link_to "Cancelar", <%= plural_name %>_path %> <%- end -%>
+  </div>   
+<%% end %>
 
-<%- if action? :index -%>
-<p><%%= link_to "Back to List", <%= plural_name %>_path %></p>
-<%- end -%>
+

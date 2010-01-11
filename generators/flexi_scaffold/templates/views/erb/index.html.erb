@@ -1,10 +1,25 @@
-<%% title "<%= plural_name.titleize %>" %>
+<%% title("<%= plural_name.titleize %>")%>
 
-<table>
+<%- if action? :new -%>
+  <div id="new_box">
+    <%%= link_to 'Adicionar <%= singular_name.titleize %>', new_<%= singular_name %>_path %>, :class=>'new' %>
+  </div>	
+<%- end -%>
+
+<table cellspacing="1" cellpadding="2">
   <tr>
   <%- for attribute in attributes -%>
     <th><%= attribute.column.human_name.titleize %></th>
   <%- end -%>
+  <%- if action? :show -%>
+    <th></th>
+  <%- end -%>
+  <%- if action? :edit -%>
+    <th></th>
+  <%- end -%>
+  <%- if action? :destroy -%>    
+    <th></th>
+   <%- end -%>    
   </tr>
   <%% for <%= singular_name %> in @<%= plural_name %> %>
     <tr>
@@ -12,18 +27,15 @@
       <td><%%=h <%= singular_name %>.<%= attribute.name %> %></td>
     <%- end -%>
     <%- if action? :show -%>
-      <td><%%= link_to "Show", <%= singular_name %> %></td>
+      <td width="8%"><%%= link_to "Ver", <%= singular_name %>, :class=>'view' %></td>
     <%- end -%>
     <%- if action? :edit -%>
-      <td><%%= link_to "Edit", edit_<%= singular_name %>_path(<%= singular_name %>) %></td>
+      <td width="8%"><%%= link_to "Editar", edit_<%= singular_name %>_path(<%= singular_name %>), :class=>'edit' %></td>
     <%- end -%>
     <%- if action? :destroy -%>
-      <td><%%= link_to "Destroy", <%= singular_name %>, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td width="8%"><%%= link_to "Excluir", <%= singular_name %>, :class=>'delete', :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
     <%- end -%>
     </tr>
   <%% end %>
 </table>
-
-<%- if action? :new -%>
-<p><%%= link_to "New <%= singular_name.titleize %>", new_<%= singular_name %>_path %></p>
-<%- end -%>
+<%%= will_paginate @<%= plural_name %>, :prev_label=>'&laquo; Anterior', :next_label=>'Próximo &raquo;' %>

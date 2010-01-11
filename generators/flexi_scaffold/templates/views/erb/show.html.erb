@@ -7,14 +7,14 @@
 </p>
 <%- end -%>
 
-<p>
+<div id="control_box">
 <%- if action? :edit -%>
-  <%%= link_to "Editar", edit_<%= singular_name %>_path(@<%= singular_name %>) %> |
+  <%%= link_to "Editar", edit_<%= singular_name %>_path(@<%= singular_name %>), :class=>'edit' %> |
 <%- end -%>
 <%- if action? :destroy -%>
-  <%%= link_to "Excluir", @<%= singular_name %>, :confirm => 'Are you sure?', :method => :delete %> |
+  <%%= link_to "Excluir", @<%= singular_name %>, :confirm => 'Tem certeza que deseja excluir?', :class=>'delete', :method => :delete %> |
 <%- end -%>
 <%- if action? :index -%>
-  <%%= link_to "Ver todos", <%= plural_name %>_path %>
+  <%%= link_to "Ver todos", <%= plural_name %>_path, :class=>'view' %>
 <%- end -%>
-</p>
+</div>

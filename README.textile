@@ -37,6 +37,8 @@ ruby script/generate flexi_layout
 ruby script/generate flexi_authentication
 ...
 ruby script/generate flexi_scaffold Post title:string body:text
+or
+ruby script/generate flexi_resource_scaffold Post title:string body:text 
 </pre>
 
 h2. Screenshots

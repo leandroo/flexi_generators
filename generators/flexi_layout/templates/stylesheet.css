@@ -26,7 +26,7 @@ div#top_nav{
 .logout{ color:#D30000; font-weight:bold;}
 .login{ font-weight:bold; }
 
-div#header{ width: 800px; margin: 0 auto; }
+div#header{ width: 830px; margin: 0 auto; }
 
 div#control_box {
 	background-color:#F3F3F3;
@@ -128,12 +128,12 @@ a { color: #0000FF; }
  }
 #flash_notice {
 	background-color: #CFC; 
-	border: solid 1px #6C6; 
+	border: dashed 1px #6C6; 
 	color: #1E5F1D;
 }
 #flash_error { 
 	background-color: #FCC; 
-	border: solid 1px #C66; 
+	border: dashed 1px #C66; 
 	color:#9E0B0F;
 }
 

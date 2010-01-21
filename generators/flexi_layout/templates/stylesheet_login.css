@@ -63,11 +63,11 @@ a { color: #0000FF; }
  }
 #flash_notice {
 	background-color: #CFC; 
-	border: solid 1px #6C6; 
+	border: dashed 1px #6C6; 
 	color: #1E5F1D;
 }
 #flash_error { 
 	background-color: #FCC; 
-	border: solid 1px #C66; 
+	border: dashed 1px #C66; 
 	color:#9E0B0F;
 }

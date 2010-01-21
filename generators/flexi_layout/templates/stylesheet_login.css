@@ -10,6 +10,10 @@ body {
   background-repeat:repeat-x;
 }
 
+input[type=text]{ border:1px solid #CCCCCC; }
+
+input[type=password] { border:1px solid #CCCCCC; }
+
 div#control_box {
 	background-color:#F3F3F3;
 	border:1px solid #E5E5E5;

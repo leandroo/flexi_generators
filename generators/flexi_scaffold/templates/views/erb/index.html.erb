@@ -27,7 +27,7 @@
       <td><%%=h <%= singular_name %>.<%= attribute.name %> %></td>
     <%- end -%>
     <%- if action? :show -%>
-      <td width="6%"><%%= link_to "Ver", <%= singular_name %>, :class=>'view' %></td>
+      <td width="6%" align="center"><%%= link_to "Ver", <%= singular_name %>, :class=>'view' %></td>
     <%- end -%>
     <%- if action? :edit -%>
       <td width="6%"><%%= link_to "Editar", edit_<%= singular_name %>_path(<%= singular_name %>), :class=>'edit' %></td>

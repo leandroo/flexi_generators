@@ -30,10 +30,10 @@
       <td width="6%" align="center"><%%= link_to "Ver", <%= singular_name %>, :class=>'view' %></td>
     <%- end -%>
     <%- if action? :edit -%>
-      <td width="6%"><%%= link_to "Editar", edit_<%= singular_name %>_path(<%= singular_name %>), :class=>'edit' %></td>
+      <td width="6%" align="center"><%%= link_to "Editar", edit_<%= singular_name %>_path(<%= singular_name %>), :class=>'edit' %></td>
     <%- end -%>
     <%- if action? :destroy -%>
-      <td width="6%"><%%= link_to "Excluir", <%= singular_name %>, :class=>'delete', :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
+      <td width="6%" align="center"><%%= link_to "Excluir", <%= singular_name %>, :class=>'delete', :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
     <%- end -%>
     </tr>
   <%% end %>

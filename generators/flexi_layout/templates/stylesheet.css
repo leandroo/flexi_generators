@@ -15,7 +15,8 @@ select{ border:1px solid #CCCCCC;}
 textarea{ border:1px solid #CCCCCC; }
 .logout{ color:#D30000; font-weight:bold;}
 .login { font-weight:bold; }
-.view{color: #0085CF;}
+.view{color: #55a34a;}
+.back{color: #0085CF;}
 .edit{color:#C5A059;}
 .delete{color:#A02B2B;}
 .new{

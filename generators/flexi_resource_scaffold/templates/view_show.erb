@@ -5,6 +5,6 @@
 </p>
 <% end -%>
 <div id="control_box">
-	<%%= link_to 'Voltar', collection_url, :class=>'view' %> | <%%= link_to 'Editar', edit_object_url, :class=>'edit' %> | <%%=link_to 'Excluir', object_url(@<%= singular_name %>), :class=>'delete', :confirm => 'Tem certeza que deseja excluir?', :method => :delete %>
+	<%%= link_to 'Voltar', collection_url, :class=>'back' %> | <%%= link_to 'Editar', edit_object_url, :class=>'edit' %> | <%%=link_to 'Excluir', object_url(@<%= singular_name %>), :class=>'delete', :confirm => 'Tem certeza que deseja excluir?', :method => :delete %>
 </div>
 

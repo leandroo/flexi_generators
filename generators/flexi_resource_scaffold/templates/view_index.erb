@@ -11,15 +11,16 @@
   <% end -%>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
   <%%- @<%= plural_name %>.each do |<%= singular_name %>|%>
     <tr>
     <%- for attribute in attributes -%>
       <td><%%=h <%= singular_name %>.<%= attribute.name %> %></td>
     <%- end -%>    
-      <td width="6%"><%%= link_to "Ver", object_url(<%= singular_name %>), :class=>'view' %></td>
-      <td width="6%"><%%=link_to 'Editar', edit_object_url(<%= singular_name %>), :class=>'edit' %></td>
-      <td width="6%"><%%=link_to 'Excluir', object_url(<%= singular_name %>), :class=>'delete', :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
+      <td width="6%" align="center"><%%= link_to "Ver", object_url(<%= singular_name %>), :class=>'view' %></td>
+      <td width="6%" align="center"><%%=link_to 'Editar', edit_object_url(<%= singular_name %>), :class=>'edit' %></td>
+      <td width="6%" align="center"><%%=link_to 'Excluir', object_url(<%= singular_name %>), :class=>'delete', :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
     </tr>
   <%% end %>
 </table>

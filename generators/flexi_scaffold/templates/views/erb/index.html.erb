@@ -27,13 +27,13 @@
       <td><%%=h <%= singular_name %>.<%= attribute.name %> %></td>
     <%- end -%>
     <%- if action? :show -%>
-      <td width="8%"><%%= link_to "Ver", <%= singular_name %>, :class=>'view' %></td>
+      <td width="6%"><%%= link_to "Ver", <%= singular_name %>, :class=>'view' %></td>
     <%- end -%>
     <%- if action? :edit -%>
-      <td width="8%"><%%= link_to "Editar", edit_<%= singular_name %>_path(<%= singular_name %>), :class=>'edit' %></td>
+      <td width="6%"><%%= link_to "Editar", edit_<%= singular_name %>_path(<%= singular_name %>), :class=>'edit' %></td>
     <%- end -%>
     <%- if action? :destroy -%>
-      <td width="8%"><%%= link_to "Excluir", <%= singular_name %>, :class=>'delete', :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
+      <td width="6%"><%%= link_to "Excluir", <%= singular_name %>, :class=>'delete', :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
     <%- end -%>
     </tr>
   <%% end %>

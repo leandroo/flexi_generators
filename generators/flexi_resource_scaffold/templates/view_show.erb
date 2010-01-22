@@ -1,9 +1,10 @@
+<%% title "<%= singular_name.titleize %>" %>
 <% for attribute in attributes -%>
 <p>
-  <strong><%= attribute.column.human_name %>:</strong><%%=h @<%= singular_name %>.<%= attribute.name %> %>
+  <strong><%= attribute.column.human_name %>:</strong> <%%=h @<%= singular_name %>.<%= attribute.name %> %>
 </p>
 <% end -%>
 <div id="control_box">
-	<%%= link_to 'Editar', edit_object_url %> | <%%= link_to 'Cancelar', collection_url %>
+	<%%= link_to 'Voltar', collection_url, :class=>'view' %> | <%%= link_to 'Editar', edit_object_url, :class=>'edit' %> | <%%=link_to 'Excluir', object_url(@<%= singular_name %>), :class=>'delete', :confirm => 'Tem certeza que deseja excluir?', :method => :delete %>
 </div>
 

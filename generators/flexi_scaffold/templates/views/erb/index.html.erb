@@ -1,40 +1,40 @@
 <%% title("<%= plural_name.titleize %>")%>
 
-<%- if action? :new -%>
+<% if action? :new %>
   <div id="new_box">
     <%%= link_to('Adicionar <%= singular_name.titleize %>', new_<%= singular_name %>_path, :class =>'new') %>
   </div>	
-<%- end -%>
+<% end %>
 
 <table cellspacing="1" cellpadding="2">
   <tr>
-  <%- for attribute in attributes -%>
+  <% for attribute in attributes %>
     <th><%= attribute.column.human_name.titleize %></th>
-  <%- end -%>
-  <%- if action? :show -%>
+  <% end %>
+  <% if action? :show %>
     <th></th>
-  <%- end -%>
-  <%- if action? :edit -%>
+  <% end %>
+  <% if action? :edit %>
     <th></th>
-  <%- end -%>
-  <%- if action? :destroy -%>    
+  <% end %>
+  <% if action? :destroy %>    
     <th></th>
-   <%- end -%>    
+   <% end %>    
   </tr>
   <%% for <%= singular_name %> in @<%= plural_name %> %>
     <tr>
-    <%- for attribute in attributes -%>
+    <% for attribute in attributes %>
       <td><%%=h <%= singular_name %>.<%= attribute.name %> %></td>
-    <%- end -%>
-    <%- if action? :show -%>
+    <% end %>
+    <% if action? :show %>
       <td width="6%" align="center"><%%= link_to "Ver", <%= singular_name %>, :class=>'view' %></td>
-    <%- end -%>
-    <%- if action? :edit -%>
+    <% end %>
+    <% if action? :edit %>
       <td width="6%" align="center"><%%= link_to "Editar", edit_<%= singular_name %>_path(<%= singular_name %>), :class=>'edit' %></td>
-    <%- end -%>
-    <%- if action? :destroy -%>
+    <% end %>
+    <% if action? :destroy %>
       <td width="6%" align="center"><%%= link_to "Excluir", <%= singular_name %>, :class=>'delete', :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
-    <%- end -%>
+    <% end %>
     </tr>
   <%% end %>
 </table>

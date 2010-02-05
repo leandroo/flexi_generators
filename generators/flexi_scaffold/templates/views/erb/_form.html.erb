@@ -1,6 +1,6 @@
-<%- for attribute in attributes -%>
-  <p>
-    <%%= f.label :<%= attribute.name %> %><br />
-    <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
-  </p>
-<%- end -%>
+<% for attribute in attributes %>
+<p>
+  <%%= f.label :<%= attribute.name %> %><br />
+  <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+</p>
+<% end %>

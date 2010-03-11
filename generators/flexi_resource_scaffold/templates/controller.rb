@@ -1,5 +1,5 @@
 class <%= controller_class_name %>Controller < ResourceController::Base
-  current_tab :<%= plural_name %>
+  menu_item :<%= plural_name %>
 
   private
   def collection

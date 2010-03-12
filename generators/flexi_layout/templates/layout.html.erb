@@ -20,14 +20,14 @@
   	</div>
 	<div id="container">
 		<div id="sidenav">
-			<%% menu do |m| %>
-			  <%% m.users admin_users_path do %>
+			<%% tabs do |tab| %>
+			  <%% tab.users admin_users_path do %>
 			  	<%%= image_tag 'users.png'  %> Usuários
 			  <%% end %>	
-			  <%%= m.menu1 'Menu1', "#menu" %>
-			  <%%= m.menu2 'Menu2', "#menu" %>
-			  <%%= m.menu3 'Menu3', "#menu" %>
-			  <%%= m.menu4 'Menu4', "#menu" %>
+			  <%%= tab.menu1 'Menu1', "#menu" %>
+			  <%%= tab.menu2 'Menu2', "#menu" %>
+			  <%%= tab.menu3 'Menu3', "#menu" %>
+			  <%%= tab.menu4 'Menu4', "#menu" %>
 			<%% end %>			
   		</div>  		
   		<div id="main">	      

@@ -1,6 +1,5 @@
 # commands
 run "rm public/index.html"
-run "rm public/favicon.ico"
 run "rm README"
 run "rm doc/README_FOR_APP"
 

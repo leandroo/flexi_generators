@@ -7,6 +7,7 @@ run "rm doc/README_FOR_APP"
 plugin "tabs_helper", :git => "git://github.com/leandroo/tabs_helper.git"
 plugin "resource_controller", :git => "git://github.com/jamesgolick/resource_controller.git"
 plugin "jrails", :git => "git://github.com/aaronchi/jrails.git"
+plugin "rails-footnotes", :git => "git://github.com/josevalim/rails-footnotes.git"
 plugin "flexi_generators", :git => "git://github.com/leandroo/flexi_generators.git"
 
 # gems

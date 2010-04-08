@@ -3,7 +3,7 @@
 <%% form_for @<%= singular_name %> do |f| %>	
   <%= render_form %>
   <div id="control_box">
-    <%%= submit_tag "Salvar" %> | <%- if action? :index -%> <%%= link_to "Cancelar", <%= plural_name %>_path %> <%- end -%>
+    <%%= submit_tag "Salvar" %> | <% if action? :index -%> <%%= link_to "Cancelar", <%= plural_name %>_path %> <% end %>
   </div>   
 <%% end %>
 

@@ -29,6 +29,8 @@ h2. Dependencies
 * Tabs Helper plugin: http://github.com/danielvlopes/tabs_helper
 * Resource Controller plugin: http://github.com/giraffesoft/resource_controller
 * Will Paginate plugin/gem: http://github.com/mislav/will_paginate
+* Rails Footnotes plugin: http://github.com/josevalim/rails-footnotes
+* JRails plugin: http://github.com/aaronchi/jrails
 
 h2. Usage
 
@@ -44,13 +46,15 @@ ruby script/generate flexi_resource_scaffold Post title:string body:text
 
 h2. Screenshots
 
-!http://img30.imageshack.us/img30/192/flexihome.png(Home layout)!
+!http://img687.imageshack.us/img687/3579/homemk.png(Home layout)!
 
-!http://img198.imageshack.us/img198/3931/flexilogin.png(Login layout)!
+!http://img441.imageshack.us/img441/5562/autenticacao.png(Login layout)!
 
-!http://img22.imageshack.us/img22/9846/adminlayout.png(Admin layout)!
+!http://img337.imageshack.us/img337/5549/adminkf.png(Admin layout)!
 
-!http://img682.imageshack.us/img682/1679/flexiscaffold.png(Scaffold layout)!
+!http://img155.imageshack.us/img155/6107/newb.png(Scaffold New)!
+
+!http://img219.imageshack.us/img219/2945/listc.png(Scaffold List)!
 
 h2. TODO
 

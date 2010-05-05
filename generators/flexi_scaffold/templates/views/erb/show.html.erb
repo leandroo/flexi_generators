@@ -10,7 +10,7 @@
 <%- if action? :index -%>
   <%%= link_to "Voltar", <%= plural_name %>_path, :class=>'back' %> |
 <%- end -%>	
-<%- if action? :edit- %>
+<%- if action? :edit -%>
   <%%= link_to "Editar", edit_<%= singular_name %>_path(@<%= singular_name %>), :class=>'edit' %> |
 <%- end -%>
 <%- if action? :destroy -%>

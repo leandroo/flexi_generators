@@ -21,13 +21,13 @@
 
       <td width="46%"><%%=h user.email %></td>
     
-      <td width="8%"><%%=link_to 'Editar', edit_admin_user_url(user), :class=>'edit' %></td>
+      <td width="8%" align="center"><%%=link_to 'Editar', edit_admin_user_url(user), :class=>'edit' %></td>
       <%% if (user.username == 'admin') %>
-      	<td width="8%"><%%=link_to 'Excluir', "#delete", :class=>'delete', :onclick => "alert('Não é possível excluir o usuário Admin.');"  %></td>
+      	<td width="8%" align="center"><%%=link_to 'Excluir', "#delete", :class=>'delete', :onclick => "alert('Não é possível excluir o usuário Admin.');"  %></td>
       <%% else %>
-      	<td width="8%"><%%=link_to 'Excluir', admin_user_url(user), :class=>'delete', :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
+      	<td width="8%" align="center"><%%=link_to 'Excluir', admin_user_url(user), :class=>'delete', :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
       <%% end %>
     </tr>
   <%% end %>
 </table>
-<%%= will_paginate @users, :prev_label=>'&laquo; Anterior', :next_label=>'Próximo &raquo;' %>
+<%%= will_paginate @users, :previous_label=>'&laquo; Anterior', :next_label=>'Próximo &raquo;' %>

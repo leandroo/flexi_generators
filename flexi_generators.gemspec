@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
     "README.textile",
      "Rakefile",
      "VERSION",
+     "flexi_generators.gemspec",
      "flexi_template.rb",
      "generators/flexi_authentication/USAGE",
      "generators/flexi_authentication/flexi_authentication_generator.rb",

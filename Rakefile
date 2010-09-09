@@ -32,6 +32,7 @@ begin
     gemspec.homepage = "http://github.com/leandroo/flexi_generators"
     gemspec.authors = ["Leandro de Oliveira"]
   end
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler not available. Install it with: gem install jeweler"
 end

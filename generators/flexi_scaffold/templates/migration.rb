@@ -1,12 +1,10 @@
 class Create<%= plural_class_name %> < ActiveRecord::Migration
   def self.up
     create_table :<%= plural_name %> do |t|
-    <%- for attribute in attributes -%>
+    <%- for attribute in model_attributes -%>
       t.<%= attribute.type %> :<%= attribute.name %>
-    <%- end -%>
-    <%- unless options[:skip_timestamps] -%>
+     <%- end -%>
       t.timestamps
-    <%- end -%>
     end
   end
   

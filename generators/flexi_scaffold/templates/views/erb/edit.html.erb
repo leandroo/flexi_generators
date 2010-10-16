@@ -1,8 +1,3 @@
-<%% title("Editando <%= singular_name.titleize %>") %>
+<%% title "Editando <%= singular_name.titleize  %>" %>
 
-<%% form_for @<%= singular_name %> do |f| %>	
-  <%= render_form %>
-  <div id="control_box">
-    <%%= submit_tag "Alterar" %> | <% if action? :index %> <%%= link_to "Cancelar", <%= plural_name %>_path %> <% end %>
-  </div>   
-<%% end %>
+<%%= render "form" %>

@@ -4,44 +4,57 @@ My Rails generator scripts. Generates controllers, views, layouts and stylesheet
 
 * Login layout
 * App layout
-* Menus with Tab Helper plugin 
-* Controllers and views generated with Resource Controller plugin
+* Menus with Menu Builder plugin 
+* Pagination with Will Paginate plugin
 
-h2. Included Generators
+h2. Instalation
 
-* flexi_authentication: generates user model with sign up and log in.
-* flexi_layout: generates generic layout, stylesheet, and helper files.
-* flexi_scaffold: generates a controller and optional model/migration.
-* flexi_resource_scaffold: generates a controller and optional model/migration (resource_controller plugin).
+Rail2
 
-h2. Quickstart 
+<pre>  
+gem.config "flexi_generators", :version => '0.1.0'
+</pre>
+
+h2. Quickstart Rails 2
 
 These 4 simple steps are the essentials to get you smoothly up and running…
 
 1. Create your app and configure all dependencies 
-@rails appname -m http://github.com/leandroo/flexi_generators/raw/master/flexi_template.rb@
+@rails appname -m http://github.com/leandroo/flexi_generators/raw/v0.1.0/flexi_template.rb@
 2. Run @rake gems:install@ and @rake db:migrate@ to create your database and installs all required gems
 3. Start your server with @ruby script/server@
 4. Open up "http://localhost:3000":http://localhost:3000
+  
+Rails3
 
-h2. Dependencies
+<pre>  
+gem "flexi_generators", '>=0.2.0'
+</pre>
 
-* Tabs Helper plugin: http://github.com/danielvlopes/tabs_helper
-* Resource Controller plugin: http://github.com/giraffesoft/resource_controller
-* Will Paginate plugin/gem: http://github.com/mislav/will_paginate
-* Rails Footnotes plugin: http://github.com/josevalim/rails-footnotes
-* JRails plugin: http://github.com/aaronchi/jrails
+h2. Included Generators
+
+* flexi_prepare: generates initial files anda configurations.
+* flexi_auth: generates user model with sign up and log in.
+* flexi_scaffold: generates custom scaffold.
+
+h2. Quickstart Rails 3
+
+These 4 simple steps are the essentials to get you smoothly up and running…
+
+1. Create your app and configure all dependencies 
+@rails new appname -m http://github.com/leandroo/flexi_generators/raw/v0.2.0/flexi_template.rb@
+2. Run @bundle install@, @rake db:migrate@ and @rake db:seed@ to installs all required gems and create your database
+3. Start your server with @rails server@
+4. Open up "http://localhost:3000":http://localhost:3000
 
 h2. Usage
 
 <pre>
-ruby script/generate flexi_layout
+rails g flexi_prepare
 ...
-ruby script/generate flexi_authentication
+rails g flexi_auth
 ...
-ruby script/generate flexi_scaffold Post title:string body:text
-or
-ruby script/generate flexi_resource_scaffold Post title:string body:text 
+rails g flexi_scaffold Post title:string body:text
 </pre>
 
 h2. Screenshots

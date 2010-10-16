@@ -1,232 +1,98 @@
-class FlexiScaffoldGenerator < Rails::Generator::Base
-  attr_accessor :name, :attributes, :controller_actions
+require 'rails/generators/migration'
+require 'rails/generators/generated_attribute'
+
+class FlexiScaffoldGenerator < Rails::Generators::Base
+  include Rails::Generators::Migration	
+  source_root File.expand_path('../templates', __FILE__)
   
-  def initialize(runtime_args, runtime_options = {})
+  no_tasks { attr_accessor :model_name, :model_attributes }
+  argument :model_name, :type => :string, :required => true, :banner => 'ModelName'
+  argument :args_for_m, :type => :array, :default => [], :banner => 'model:attributes'
+
+  def initialize(*args, &block)
     super
-    usage if @args.empty?
-    
-    @name = @args.first
-    @controller_actions = []
-    @attributes = []
-    
-    @args[1..-1].each do |arg|
-      if arg == '!'
-        options[:invert] = true
-      elsif arg.include? ':'
-        @attributes << Rails::Generator::GeneratedAttribute.new(*arg.split(":"))
-      else
-        @controller_actions << arg
-        @controller_actions << 'create' if arg == 'new'
-        @controller_actions << 'update' if arg == 'edit'
+    @model_attributes = []
+
+    args_for_m.each do |arg|  
+      if arg.include?(':')
+        @model_attributes << Rails::Generators::GeneratedAttribute.new(*arg.split(':'))
       end
     end
     
-    @controller_actions.uniq!
-    @attributes.uniq!
+    @model_attributes.uniq!
     
-    if options[:invert] || @controller_actions.empty?
-      @controller_actions = all_actions - @controller_actions
-    end
-    
-    if @attributes.empty?
-      options[:skip_model] = true # default to skipping model if no attributes passed
+    if @model_attributes.empty?
       if model_exists?
         model_columns_for_attributes.each do |column|
-          @attributes << Rails::Generator::GeneratedAttribute.new(column.name.to_s, column.type.to_s)
+          @model_attributes << Rails::Generators::GeneratedAttribute.new(column.name.to_s, column.type.to_s)
         end
       else
-        @attributes << Rails::Generator::GeneratedAttribute.new('name', 'string')
-      end
-    end
+        @model_attributes << Rails::Generators::GeneratedAttribute.new('name', 'string')
+      end        	
+    end    	
+  end 
+  
+  def create_model
+    template 'model.rb', "app/models/#{singular_name}.rb"
+    template "tests/model.rb", "test/unit/#{singular_name}_test.rb"
+    template 'fixtures.yml', "test/fixtures/#{plural_name}.yml"
   end
   
-  def manifest
-    record do |m|
-      unless options[:skip_model]
-        m.directory "app/models"
-        m.template "model.rb", "app/models/#{singular_name}.rb"
-        unless options[:skip_migration]
-          m.migration_template "migration.rb", "db/migrate", :migration_file_name => "create_#{plural_name}"
-        end
-        
-        if rspec?
-          m.directory "spec/models"
-          m.template "tests/#{test_framework}/model.rb", "spec/models/#{singular_name}_spec.rb"
-          m.directory "spec/fixtures"
-          m.template "fixtures.yml", "spec/fixtures/#{plural_name}.yml"
-        else
-          m.directory "test/unit"
-          m.template "tests/#{test_framework}/model.rb", "test/unit/#{singular_name}_test.rb"
-          m.directory "test/fixtures"
-          m.template "fixtures.yml", "test/fixtures/#{plural_name}.yml"
-        end
-      end
-      
-      unless options[:skip_controller]
-        m.directory "app/controllers"
-        m.template "controller.rb", "app/controllers/#{plural_name}_controller.rb"
-        
-        m.directory "app/helpers"
-        m.template "helper.rb", "app/helpers/#{plural_name}_helper.rb"
-        
-        m.directory "app/views/#{plural_name}"
-        controller_actions.each do |action|
-          if File.exist? source_path("views/#{view_language}/#{action}.html.#{view_language}")
-            m.template "views/#{view_language}/#{action}.html.#{view_language}", "app/views/#{plural_name}/#{action}.html.#{view_language}"
-          end
-        end
-      
-        if form_partial?
-          m.template "views/#{view_language}/_form.html.#{view_language}", "app/views/#{plural_name}/_form.html.#{view_language}"
-        end
-      
-        m.route_resources plural_name
-        
-        if rspec?
-          m.directory "spec/controllers"
-          m.template "tests/#{test_framework}/controller.rb", "spec/controllers/#{plural_name}_controller_spec.rb"
-        else
-          m.directory "test/functional"
-          m.template "tests/#{test_framework}/controller.rb", "test/functional/#{plural_name}_controller_test.rb"
-        end
-      end
-    end
+  def create_controller  
+    template "controller.rb", "app/controllers/admin/#{plural_name}_controller.rb"
+    inject_into_file "config/routes.rb", "\n\tresources #{plural_name.to_sym.inspect}", :after => 'match "home" => "home#index"'
+    template "tests/controller.rb", "test/functional/#{plural_name}_controller_test.rb"
+    template 'helper.rb', "app/helpers/#{plural_name}_helper.rb"
+    template "tests/helper.rb", "test/unit/helpers/#{plural_name}_controller_test.rb"
   end
   
-  def form_partial?
-    actions? :new, :edit
-  end
-  
-  def all_actions
-    %w[index show new create edit update destroy]
-  end
-  
-  def action?(name)
-    controller_actions.include? name.to_s
-  end
-  
-  def actions?(*names)
-    names.all? { |n| action? n.to_s }
-  end
+  def create_view_files
+    template "views/erb/index.html.erb", "app/views/admin/#{plural_name}/index.html.erb"
+    template "views/erb/_form.html.erb", "app/views/admin/#{plural_name}/_form.html.erb"
+    template "views/erb/show.html.erb", "app/views/admin/#{plural_name}/show.html.erb"
+    template "views/erb/new.html.erb", "app/views/admin/#{plural_name}/new.html.erb"
+    template "views/erb/edit.html.erb", "app/views/admin/#{plural_name}/edit.html.erb"
+    template "views/erb/_error_messages.html.erb", "app/views/shared/_error_messages.html.erb"
+  end  	
+
+  def create_migration
+    migration_template 'migration.rb', "db/migrate/create_#{plural_name}.rb"
+  end  
+
+  private
   
   def singular_name
-    name.underscore
+    model_name.underscore
   end
   
   def plural_name
-    name.underscore.pluralize
+    model_name.underscore.pluralize
   end
   
   def class_name
-    name.camelize
+    model_name.camelize
   end
   
   def plural_class_name
     plural_name.camelize
   end
   
-  def controller_methods(dir_name)
-    controller_actions.map do |action|
-      read_template("#{dir_name}/#{action}.rb")
-    end.join("  \n").strip
-  end
-  
-  def render_form
-    if form_partial?
-      if options[:haml]
-        "= render :partial => 'form', :locals => { :f => f }"
-      else
-        "<%= render :partial => 'form', :locals => { :f => f } %>"
-      end
-    else
-      read_template("views/#{view_language}/_form.html.#{view_language}")
-    end
-  end
-  
-  def items_path(suffix = 'path')
-    if action? :index
-      "#{plural_name}_#{suffix}"
-    else
-      "root_#{suffix}"
-    end
-  end
-  
-  def item_path(suffix = 'path')
-    if action? :show
-      "@#{singular_name}"
-    else
-      items_path(suffix)
-    end
-  end
-  
-  def item_path_for_spec(suffix = 'path')
-    if action? :show
-      "#{singular_name}_#{suffix}(assigns[:#{singular_name}])"
-    else
-      items_path(suffix)
-    end
-  end
-  
-  def item_path_for_test(suffix = 'path')
-    if action? :show
-      "#{singular_name}_#{suffix}(assigns(:#{singular_name}))"
-    else
-      items_path(suffix)
-    end
-  end
-  
+  def model_exists?
+    File.exist? destination_path("app/models/#{singular_name}.rb")
+  end  
+
   def model_columns_for_attributes
     class_name.constantize.columns.reject do |column|
       column.name.to_s =~ /^(id|created_at|updated_at)$/
     end
   end
-  
-  def rspec?
-    test_framework == :rspec
-  end
-  
-protected
-  
-  def view_language
-    options[:haml] ? 'haml' : 'erb'
-  end
-  
-  def test_framework
-    options[:test_framework] ||= default_test_framework
-  end
-  
-  def default_test_framework
-    File.exist?(destination_path("spec")) ? :rspec : :testunit
-  end
-  
-  def add_options!(opt)
-    opt.separator ''
-    opt.separator 'Options:'
-    opt.on("--skip-model", "Don't generate a model or migration file.") { |v| options[:skip_model] = v }
-    opt.on("--skip-migration", "Don't generate migration file for model.") { |v| options[:skip_migration] = v }
-    opt.on("--skip-timestamps", "Don't add timestamps to migration file.") { |v| options[:skip_timestamps] = v }
-    opt.on("--skip-controller", "Don't generate controller, helper, or views.") { |v| options[:skip_controller] = v }
-    opt.on("--invert", "Generate all controller actions except these mentioned.") { |v| options[:invert] = v }
-    opt.on("--haml", "Generate HAML views instead of ERB.") { |v| options[:haml] = v }
-    opt.on("--testunit", "Use test/unit for test files.") { options[:test_framework] = :testunit }
-    opt.on("--rspec", "Use RSpec for test files.") { options[:test_framework] = :rspec }
-    opt.on("--shoulda", "Use Shoulda for test files.") { options[:test_framework] = :shoulda }
-  end
-  
-  # is there a better way to do this? Perhaps with const_defined?
-  def model_exists?
-    File.exist? destination_path("app/models/#{singular_name}.rb")
-  end
-  
-  def read_template(relative_path)
-    ERB.new(File.read(source_path(relative_path)), nil, '-').result(binding)
-  end
-  
-  def banner
-    <<-EOS
-Creates a controller and optional model given the name, actions, and attributes.
 
-USAGE: #{$0} #{spec.name} ModelName [controller_actions and model:attributes] [options]
-EOS
-  end
+  def self.next_migration_number(dirname) #:nodoc:
+    if ActiveRecord::Base.timestamped_migrations
+      Time.now.utc.strftime("%Y%m%d%H%M%S")
+    else
+      "%.3d" % (current_migration_number(dirname) + 1)
+    end
+  end    
+  
 end

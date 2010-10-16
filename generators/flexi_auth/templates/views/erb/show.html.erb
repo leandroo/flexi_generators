@@ -1,0 +1,16 @@
+<%% title "<%= user_singular_name.titleize  %>" %>
+<p>
+  <b>Usuário:</b>
+  <%%= @<%= user_singular_name %>.username %>
+</p>
+<p>
+  <b>E-mail:</b>
+  <%%= @<%= user_singular_name %>.email %>
+</p>
+
+<div id="control_box">
+  <%%= link_to( image_tag("back.png"), admin_<%= user_plural_name %>_path, :title => "Voltar" ) %> |
+  <%%= link_to( image_tag("edit.png"), edit_admin_<%= user_singular_name %>_path(@<%= user_singular_name %>), :title => "Editar" ) %> |
+  <%%= link_to( image_tag("delete.png"), [:admin, @<%= user_singular_name %>], :confirm => 'Tem certeza que deseja excluir?', :method => :delete, :title => "Exlcuir" ) %> 
+</div>
+

@@ -1,0 +1,5 @@
+Description:
+    The flexi_auth generator creates a custom authentication and users CRUD. 
+    
+Example:
+    rails generate flexi_auth 

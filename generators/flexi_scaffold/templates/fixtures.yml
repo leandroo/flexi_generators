@@ -1,9 +1,9 @@
 one:
-<%- for attribute in attributes -%>
+<%- for attribute in model_attributes -%>
   <%= attribute.name %>: <%= attribute.default %>
 <%- end -%>
 
 two:
-<%- for attribute in attributes -%>
+<%- for attribute in model_attributes -%>
   <%= attribute.name %>: <%= attribute.default %>
 <%- end -%>

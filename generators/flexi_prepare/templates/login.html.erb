@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title><%%= "Área administrativa - #{ yield(:title) }" %></title>
+    <%%= stylesheet_link_tag 'login' %>
+    <%%= yield(:head) %>
+    <%%= csrf_meta_tag %>
+  </head>
+  <body>
+  	<div id="logo">
+  	  <%%= image_tag("logo.png") %>
+  	</div>
+	<div id="container">
+	  <div class="box-header">		      
+	    <%% if show_title? %>
+          <h2><%%= yield(:title) %></h2>
+        <%% end %>			
+      </div>
+      <div class="box">
+	    <%%= raw flash_messages %>
+	    <%%= yield %>
+	  </div>
+	</div>
+  </body>
+</html>

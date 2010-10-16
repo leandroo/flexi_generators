@@ -1,19 +1,15 @@
-<%% title "<%= singular_name.titleize %>" %>
-<%- for attribute in attributes -%>
+<%% title "<%= singular_name.titleize  %>" %>
+
+<%- for attribute in model_attributes -%>
 <p>
-  <strong><%= attribute.column.human_name.titleize %>:</strong>
-  <%%=h @<%= singular_name %>.<%= attribute.name %> %>
+  <b><%= attribute.human_name.titleize %>:</b>
+  <%%= @<%= singular_name %>.<%= attribute.name %> %>
 </p>
 <%- end -%>
 
 <div id="control_box">
-<%- if action? :index -%>
-  <%%= link_to "Voltar", <%= plural_name %>_path, :class=>'back' %> |
-<%- end -%>	
-<%- if action? :edit -%>
-  <%%= link_to "Editar", edit_<%= singular_name %>_path(@<%= singular_name %>), :class=>'edit' %> |
-<%- end -%>
-<%- if action? :destroy -%>
-  <%%= link_to "Excluir", @<%= singular_name %>, :confirm => 'Tem certeza que deseja excluir?', :class=>'delete', :method => :delete %> 
-<%- end -%>
+  <%%= link_to( image_tag("back.png"), admin_<%= plural_name %>_path, :title => "Voltar" ) %> |
+  <%%= link_to( image_tag("edit.png"), edit_admin_<%= singular_name %>_path(@<%= singular_name %>), :title => "Editar" ) %> |
+  <%%= link_to( image_tag("delete.png"), [:admin, @<%= singular_name %>], :confirm => 'Tem certeza que deseja excluir?', :method => :delete, :title => "Exlcuir" ) %> 
 </div>
+

@@ -1,6 +1,13 @@
-<% for attribute in attributes %>
-<p>
-  <%%= f.label :<%= attribute.name %> %><br />
-  <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
-</p>
-<% end %>
+<%%= form_for([:admin, @<%= singular_name %>]) do |f| %>
+  <%%= render "shared/error_messages", :resource => @<%= singular_name %> %>
+  
+  <%- for attribute in model_attributes -%>
+  <div class="field">
+    <%%= f.label :<%= attribute.name %> %><br />
+    <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+  </div>
+  <%- end -%>
+  <div id="control_box">
+    <%%= f.submit "Salvar", :class => "button medium save blue" %> | <%%= link_to("Cancelar", admin_<%= plural_name %>_path, :class => "button medium red") %>
+  </div>
+<%% end %>

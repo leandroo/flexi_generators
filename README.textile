@@ -11,24 +11,12 @@ h2. Instalation
 
 Rail2
 
-<pre>  
-gem.config "flexi_generators", :version => '0.1.0'
-</pre>
+For more details about configuration in Rails 2 look "here":http://github.com/leandroo/flexi_generators/tree/v0.1.0
 
-h2. Quickstart Rails 2
-
-These 4 simple steps are the essentials to get you smoothly up and running…
-
-1. Create your app and configure all dependencies 
-@rails appname -m http://github.com/leandroo/flexi_generators/raw/v0.1.0/flexi_template.rb@
-2. Run @rake gems:install@ and @rake db:migrate@ to create your database and installs all required gems
-3. Start your server with @ruby script/server@
-4. Open up "http://localhost:3000":http://localhost:3000
-  
 Rails3
 
 <pre>  
-gem "flexi_generators", '>=0.2.0'
+gem "flexi_generators", '0.2.0'
 </pre>
 
 h2. Included Generators
@@ -42,7 +30,7 @@ h2. Quickstart Rails 3
 These 4 simple steps are the essentials to get you smoothly up and running…
 
 1. Create your app and configure all dependencies 
-@rails new appname -m http://github.com/leandroo/flexi_generators/raw/v0.2.0/flexi_template.rb@
+@rails new appname -m http://github.com/leandroo/flexi_generators/raw/v0.2.0/template.rb@
 2. Run @bundle install@, @rake db:migrate@ and @rake db:seed@ to installs all required gems and create your database
 3. Start your server with @rails server@
 4. Open up "http://localhost:3000":http://localhost:3000
@@ -59,19 +47,11 @@ rails g flexi_scaffold Post title:string body:text
 
 h2. Screenshots
 
-!http://img687.imageshack.us/img687/3579/homemk.png(Home layout)!
-
-!http://img441.imageshack.us/img441/5562/autenticacao.png(Login layout)!
-
-!http://img337.imageshack.us/img337/5549/adminkf.png(Admin layout)!
-
-!http://img155.imageshack.us/img155/6107/newb.png(Scaffold New)!
-
-!http://img219.imageshack.us/img219/2945/listc.png(Scaffold List)!
+!http://img697.imageshack.us/img697/1245/flexigenerators.jpg(Flexi)!
 
 h2. TODO
 
-* Support i18n
+* i18n
 * Tests, tests, tests
 
 h2. Autor

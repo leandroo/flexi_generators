@@ -201,4 +201,4 @@ pt-BR:
   authlogic:
     error_messages:
       email_invalid: endereço de e-mail invávildo
-      login_invalid: use somente letras, númeroe, espaços e .-_@   
+      login_invalid: use somente letras, números, espaços e .-_@   

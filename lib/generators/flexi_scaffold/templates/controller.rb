@@ -29,7 +29,7 @@ class Admin::<%= plural_class_name %>Controller < ApplicationController
   end
 
   def update
-  	@<%= singular_name %> = <%= class_name %>.new(params[:id])
+  	@<%= singular_name %> = <%= class_name %>.find(params[:id])
     flash[:notice] = '<%= class_name %> foi alterado com sucesso.' if @<%= singular_name  %>.update_attributes(params[:<%= singular_name %>])
     respond_with(:admin, @<%= singular_name %>)
   end

@@ -1,4 +1,4 @@
-gem "flexi_generators", "0.2.1"
+gem "flexi_generators"
 run "bundle install"
 generate :flexi_prepare
 generate :flexi_auth

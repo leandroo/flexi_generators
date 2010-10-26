@@ -14,7 +14,7 @@
 <%% @<%= plural_name %>.each do |<%= singular_name %>| %>
   <tr>
     <%- for attribute in model_attributes -%>
-    <td><%%=h <%= singular_name %>.<%= attribute.name %> %></td>
+    <td><%%= <%= singular_name %>.<%= attribute.name %> %></td>
     <%- end -%>    
     <td width="11%">
       <ul class="actions">    	

@@ -1,3 +1,4 @@
+#encoding: utf-8
 # Infelizmente não é possível colocar todas as regras...
 #
 # http://pt.wikipedia.org/wiki/Plural e

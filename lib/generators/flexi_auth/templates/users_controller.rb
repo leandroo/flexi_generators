@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Admin::<%= user_plural_class_name %>Controller < ApplicationController
   menu_item	:<%= user_plural_name %>	
   respond_to :html

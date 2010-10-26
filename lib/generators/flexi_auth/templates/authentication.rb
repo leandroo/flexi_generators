@@ -1,3 +1,4 @@
+# encoding: utf-8
 # This module is included in your application controller which makes
 # several methods available to all controllers and views. Here's a
 # common example you might add to your application layout file.

@@ -17,9 +17,11 @@ module ApplicationHelper
   end
   
   def flash_messages
+  	content = ""
     flash.collect do |key, value|
-      content_tag(:div, value, :class=>"flash_messages #{key}")
+      content << content_tag(:div, value, :class=>"flash_messages #{key}")
     end
+    content
   end 
   
   def analytics(site_id)

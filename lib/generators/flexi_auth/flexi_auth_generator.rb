@@ -34,6 +34,7 @@ class FlexiAuthGenerator < Rails::Generators::Base
     template "views/erb/new.html.erb", "app/views/admin/#{user_plural_name}/new.html.erb"
     template "views/erb/_error_messages.html.erb", "app/views/shared/_error_messages.html.erb"
     template "views/erb/edit.html.erb", "app/views/admin/#{user_plural_name}/edit.html.erb"
+    template "views/erb/application.html.erb", "app/views/layouts/application.html.erb"
   end
 
   def create_lib_files
@@ -41,7 +42,7 @@ class FlexiAuthGenerator < Rails::Generators::Base
   end
 
   def create_routes
-  	route "match 'admin' => 'user_sessions#new'"
+  	route "match 'admin' => '#{session_plural_name}#new'"
     route "resources #{session_plural_name.to_sym.inspect}"
     route "match 'login' => '#{session_plural_name}#new', :as => :login"
     route "match 'logout' => '#{session_plural_name}#destroy', :as => :logout"

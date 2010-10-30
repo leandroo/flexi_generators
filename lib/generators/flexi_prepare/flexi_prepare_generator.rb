@@ -35,7 +35,7 @@ class FlexiPrepareGenerator < Rails::Generators::Base
 	copy_file "site_helper.rb", "app/helpers/site_helper.rb"
 	copy_file "application_helper.rb", "app/helpers/application_helper.rb"	  	  	         
 	
-    template "application.html.erb", "app/views/layouts/application.html.erb"
+    
     template "login.html.erb", "app/views/layouts/login.html.erb"
 	template "site.html.erb", "app/views/layouts/site.html.erb"
 	template "site_index.html.erb", "app/views/site/index.html.erb"

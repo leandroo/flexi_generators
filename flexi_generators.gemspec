@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{flexi_generators}
-  s.version = "0.2.4"
+  s.version = "0.2.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Leandro de Oliveira"]
-  s.date = %q{2010-10-26}
+  s.date = %q{2010-10-30}
   s.description = %q{Generates authentication and custom scaffold templates.}
   s.email = %q{ol.leandro@gmail.com}
   s.extra_rdoc_files = [
@@ -38,6 +38,7 @@ Gem::Specification.new do |s|
      "lib/generators/flexi_auth/templates/users_controller.rb",
      "lib/generators/flexi_auth/templates/users_helper.rb",
      "lib/generators/flexi_auth/templates/views/erb/_error_messages.html.erb",
+     "lib/generators/flexi_auth/templates/views/erb/application.html.erb",
      "lib/generators/flexi_auth/templates/views/erb/edit.html.erb",
      "lib/generators/flexi_auth/templates/views/erb/index.html.erb",
      "lib/generators/flexi_auth/templates/views/erb/login.html.erb",

@@ -40,7 +40,8 @@ class FlexiScaffoldGenerator < Rails::Generators::Base
   
   def create_controller  
     template "controller.rb", "app/controllers/admin/#{plural_name}_controller.rb"
-    inject_into_file "config/routes.rb", "\n\tresources #{plural_name.to_sym.inspect}", :after => 'match "home" => "home#index"'
+    inject_into_file "config/routes.rb", "\n\tresources #{plural_name.to_sym.inspect}", 
+    	:after => 'namespace :admin do'
     template "tests/controller.rb", "test/functional/#{plural_name}_controller_test.rb"
     template 'helper.rb', "app/helpers/#{plural_name}_helper.rb"
     template "tests/helper.rb", "test/unit/helpers/#{plural_name}_controller_test.rb"

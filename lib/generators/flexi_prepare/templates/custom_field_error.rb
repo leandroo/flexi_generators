@@ -1,12 +1,12 @@
-#Personalizando mensagens de erro  
+#Personalizando campos com erro  
 ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
-  error_style = "background-color:#FFEBEB;border-color:#E17984;"
-  if html_tag =~ /<(input|textarea|select)[^>]+style=/
-    style_attribute = html_tag =~ /style=['"]/
-    html_tag.insert(style_attribute + 7, "#{error_style}; ")
+  error_class = "field_with_errors"
+  if html_tag =~ /<(input|textarea|select)[^>]+class=/
+   class_attribute = html_tag =~ /class=['"]/
+   html_tag.insert(class_attribute + 7, "#{error_class}; ")
   elsif html_tag =~ /<(input|textarea|select)/
     first_whitespace = html_tag =~ /\s/
-    html_tag[first_whitespace] = " style='#{error_style}' "
+    html_tag[first_whitespace] = " class='#{error_class}' "
   end
   html_tag
 end

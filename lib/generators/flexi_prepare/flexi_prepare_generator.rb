@@ -5,6 +5,7 @@ class FlexiPrepareGenerator < Rails::Generators::Base
   	remove_file "app/views/layouts/application.html.erb"
   	remove_file "app/helpers/application_helper.rb"
   	remove_file "public/index.html"
+  	remove_file "config/routes.rb"
   
     copy_file "pt-BR.yml", "config/locales/pt-BR.yml"
     copy_file "inflector_portuguese.rb", "config/initializers/inflector_portuguese.rb"	
@@ -35,14 +36,14 @@ class FlexiPrepareGenerator < Rails::Generators::Base
 	copy_file "site_helper.rb", "app/helpers/site_helper.rb"
 	copy_file "application_helper.rb", "app/helpers/application_helper.rb"	  	  	         
 	
-    
+    template "routes.rb", "config/routes.rb"
     template "login.html.erb", "app/views/layouts/login.html.erb"
 	template "site.html.erb", "app/views/layouts/site.html.erb"
 	template "site_index.html.erb", "app/views/site/index.html.erb"
 	template "admin_home_index.html.erb", "app/views/admin/home/index.html.erb"
 	
 	gem 'menu_builder', '=0.3.3'
-	gem 'will_paginate', '~> 3.0.beta'
+	gem 'will_paginate', '~> 3.0.pre2'
 
 	route 'root :to => "site#index"'
 	route 'namespace :admin do

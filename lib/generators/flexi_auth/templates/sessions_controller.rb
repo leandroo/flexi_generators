@@ -12,7 +12,7 @@ class <%= session_plural_class_name %>Controller < ApplicationController
     @<%= session_singular_name %> = <%= session_class_name %>.new(params[:<%= session_singular_name %>])
     if @<%= session_singular_name %>.save
       flash[:notice] = "Bem-vindo!"
-      redirect_to admin_home_url
+      redirect_to_target_or_default(admin_home_url)
     else
       flash.now[:error] = "Usuário/E-mail ou senha inválidos."	
       render :action => 'new'

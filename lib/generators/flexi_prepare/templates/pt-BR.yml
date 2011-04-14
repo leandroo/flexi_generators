@@ -189,16 +189,18 @@ pt-BR:
       messages:
         taken: "já está em uso"
         record_invalid: "A validação falhou: %{errors}"
+        
     models: 
-      user: Usuários
+      user: "Usuários"
+      
     attributes:
       user:
-        username: Usuário
-        email: E-mail
-        password: Senha
-        password_confirmation: Confirmar Senha
+        username: "Usuário"
+        email: "E-mail"
+        password: "Senha"
+        password_confirmation: "Confirmar Senha"
         
   authlogic:
     error_messages:
-      email_invalid: endereço de e-mail invávildo
-      login_invalid: use somente letras, números, espaços e .-_@   
+      email_invalid: "endereço de e-mail invávildo"
+      login_invalid: "use somente letras, números, espaços e .-_@"

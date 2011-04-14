@@ -11,7 +11,7 @@
   <body>
   <div class="top_nav">
   	 <%% if logged_in? %>
-       <%%= current_user.username %> | <%%= current_user.email %> | <%%= link_to "» Sair", logout_path, :class => 'logout' %>
+       <%%= current_user.username %> | <%%= current_user.email %> | <%%= link_to "» Site", root_path, :target => '_blank' %> | <%%= link_to "» Sair", logout_path, :class => 'logout' %>
       <%% else %>
         <%%= link_to "» Entrar", login_path, :class => 'login' %>
       <%% end %>

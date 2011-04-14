@@ -72,6 +72,7 @@ Gem::Specification.new do |s|
     "lib/generators/flexi_prepare/templates/messages/tip.png",
     "lib/generators/flexi_prepare/templates/messages/warning.png",
     "lib/generators/flexi_prepare/templates/pt-BR.yml",
+    "lib/generators/flexi_prepare/templates/routes.rb",
     "lib/generators/flexi_prepare/templates/show.png",
     "lib/generators/flexi_prepare/templates/site.css",
     "lib/generators/flexi_prepare/templates/site.html.erb",

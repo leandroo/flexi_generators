@@ -53,5 +53,10 @@ class FlexiPrepareGenerator < Rails::Generators::Base
     inject_into_file "config/application.rb", "\tconfig.i18n.default_locale = 'pt-BR'\n", :after => "class Application < Rails::Application\n"
     inject_into_file "config/application.rb", "\tconfig.time_zone = 'Brasilia'\n", :after => "class Application < Rails::Application\n"    
   end
+    
+  private 
   
+  def app_name
+  	File.basename(Rails.root).camelize
+  end	
 end

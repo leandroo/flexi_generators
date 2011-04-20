@@ -30,7 +30,7 @@ h2. Quickstart Rails 3
 These 4 simple steps are the essentials to get you smoothly up and running…
 
 1. Create your app and configure all dependencies 
-@rails new appname -m http://github.com/leandroo/flexi_generators/raw/master/template.rb@
+@rails new appname -m http://leandroo.com.br/flexi_generators/template.rb@
 2. Run @bundle install@, @rake db:migrate@ and @rake db:seed@ to installs all required gems and create your database
 3. Start your server with @rails server@
 4. Open up "http://localhost:3000":http://localhost:3000

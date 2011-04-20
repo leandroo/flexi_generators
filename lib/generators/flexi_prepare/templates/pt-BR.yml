@@ -189,7 +189,7 @@ pt-BR:
       messages:
         taken: "já está em uso"
         record_invalid: "A validação falhou: %{errors}"
-        
+        attachment_size: "deve ter o tamanho entre %{min} e %{max} bytes"
     models: 
       user: "Usuários"
       

@@ -275,3 +275,5 @@ div#header{ width: 900px; margin: 0 auto; }
 }
 /* Field Errors */
 input.field_with_errors { background-color:#FFEBEB; border-color: #E17984; }
+textarea.field_with_errors { background-color:#FFEBEB; border-color: #E17984; }
+select.field_with_errors { background-color:#FFEBEB; border-color: #E17984; }

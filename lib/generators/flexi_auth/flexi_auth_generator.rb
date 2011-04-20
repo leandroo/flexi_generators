@@ -43,9 +43,9 @@ class FlexiAuthGenerator < Rails::Generators::Base
 
   def create_routes
   	route "match 'admin' => '#{session_plural_name}#new'"
-    route "resources #{session_plural_name.to_sym.inspect}"
     route "match 'login' => '#{session_plural_name}#new', :as => :login"
     route "match 'logout' => '#{session_plural_name}#destroy', :as => :logout"
+    route "resources #{session_plural_name.to_sym.inspect}"
     inject_into_file "config/routes.rb", "\n\tresources #{user_plural_name.to_sym.inspect}", :after => 'match "home" => "home#index"'
   end
       

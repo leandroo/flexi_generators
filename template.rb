@@ -1,5 +1,15 @@
+# Check prerequisites
+%w{bundler flexi_generators}.each do |component|
+  unless Gem.available?(component)
+    run "gem install #{component}"
+    Gem.refresh
+    Gem.activate(component)
+  end
+end
+# Add flexi_generators to Gemfile
 gem "flexi_generators"
-run "bundle install"
+# Flexi Genertors
 generate :flexi_prepare
 generate :flexi_auth
+# Bundle
 run "bundle install"

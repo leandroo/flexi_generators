@@ -21,9 +21,9 @@ gem "flexi_generators"
 
 h2. Included Generators
 
-* flexi_prepare: generates initial files anda configurations.
-* flexi_auth: generates user model with sign up and log in.
-* flexi_scaffold: generates custom scaffold.
+* flexi:prepare - generates initial files anda configurations.
+* flexi:auth - generates user model with sign up and log in.
+* flexi:scaffold - generates custom scaffold.
 
 h2. Quickstart Rails 3
 
@@ -38,11 +38,11 @@ These 4 simple steps are the essentials to get you smoothly up and running…
 h2. Usage
 
 <pre>
-rails g flexi_prepare
+rails g flexi:prepare
 ...
-rails g flexi_auth
+rails g flexi:auth
 ...
-rails g flexi_scaffold Post title:string body:text
+rails g flexi:scaffold Post title:string body:text
 </pre>
 
 h2. Screenshots

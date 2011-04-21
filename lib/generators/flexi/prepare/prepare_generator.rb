@@ -1,4 +1,4 @@
-require 'rails/generators/flexi'
+require 'generators/flexi'
 
 module Flexi
   module Generators

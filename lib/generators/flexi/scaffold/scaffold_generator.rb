@@ -1,4 +1,4 @@
-require 'rails/generators/flexi'
+require 'generators/flexi'
 require 'rails/generators/migration'
 require 'rails/generators/generated_attribute'
 

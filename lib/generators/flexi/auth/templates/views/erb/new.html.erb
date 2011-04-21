@@ -1,10 +1,10 @@
-<%% title "Editando <%= user_singular_name.titleize  %>" %>
+<%% title "Novo <%= user_singular_name.titleize  %>" %>
 
 <%%= form_for([:admin, @<%= user_singular_name %>]) do |f| %>
   <%%= render "shared/error_messages", :resource => @<%= user_singular_name %> %>
   <div class="field">
     <%%= f.label :username %><br />
-    <%%= f.text_field :username, :readonly => true %>
+    <%%= f.text_field :username %>
   </div>
   <div class="field">
     <%%= f.label :email %><br />
@@ -19,6 +19,6 @@
     <%%= f.password_field :password_confirmation %>
   </div>   
   <div id="control_box">
-    <%%= f.submit "Salvar", :class => "button medium save blue" %> | <%%= link_to("Cancelar", admin_<%= user_plural_name %>_path, :class => "button medium red") %>
+    <%%= f.submit "Salvar", :class => "button medium blue" %> | <%%= link_to("Cancelar", admin_<%= user_plural_name %>_path, :class => "button medium red") %>
   </div>
 <%% end %>

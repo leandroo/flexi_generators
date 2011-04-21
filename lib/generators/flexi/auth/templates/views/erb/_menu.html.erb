@@ -1,0 +1,16 @@
+<div class="menu">
+  <%%= menu do |m| %>
+    <%%= m.<%= user_plural_name %> admin_<%= user_plural_name %>_path do %>
+  	  <%%= image_tag 'users.png'  %> <%= user_plural_class_name %>
+    <%% end %>	
+    <%%= m.menu1 "#menu" do %>
+      <%%= image_tag 'menu.png'  %> Menu 1
+    <%% end %>
+    <%%= m.menu2 "#menu" do %>
+      <%%= image_tag 'menu.png'  %> Menu 2
+    <%% end %>
+    <%%= m.menu3 "#menu" do %>
+      <%%= image_tag 'menu.png'  %> Menu 3
+    <%% end %>
+  <%% end %>
+</div>

@@ -21,25 +21,7 @@
   	</div>
 	<div id="container">
 		<div id="sidenav">
-			<div class="menu">
-			  <%%= menu do |m| %>
-			    <%%= m.<%= user_plural_name %> admin_<%= user_plural_name %>_path do %>
-			  	  <%%= image_tag 'users.png'  %> <%= user_plural_class_name %>
-			    <%% end %>	
-			    <%%= m.menu1 "#menu" do %>
-			      <%%= image_tag 'menu.png'  %> Menu 1
-			    <%% end %>
-			    <%%= m.menu2 "#menu" do %>
-			      <%%= image_tag 'menu.png'  %> Menu 2			    
-			    <%% end %>
-			    <%%= m.menu3 "#menu" do %>
-			      <%%= image_tag 'menu.png'  %> Menu 3			    
-			    <%% end %>
-			    <%%= m.menu4 "#menu" do %>
-			      <%%= image_tag 'menu.png'  %> Menu 4		    
-			    <%% end %>
-			  <%% end %>
-			</div>			
+		  <%%= render "layouts/menu" %>		
   		</div>  		
   		<div id="main">	 
   		  <div class="box-header">	     

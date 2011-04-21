@@ -9,7 +9,7 @@ end
 # Add flexi_generators to Gemfile
 gem "flexi_generators"
 # Flexi Genertors
-generate :flexi_prepare
-generate :flexi_auth
+generate :flexi:prepare
+generate :flexi:auth
 # Bundle
 run "bundle install"

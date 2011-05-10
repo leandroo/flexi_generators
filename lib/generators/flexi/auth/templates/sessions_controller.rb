@@ -20,7 +20,7 @@ class <%= session_plural_class_name %>Controller < ApplicationController
   end
   
   def destroy
-    current_<%= session_singular_name %>.destroy
+    current_<%= session_singular_name %>.destroy if <%= session_singular_name %>
     redirect_to login_url
   end
 end  

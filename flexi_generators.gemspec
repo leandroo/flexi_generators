@@ -4,9 +4,9 @@ require File.expand_path('../lib/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Leandro de Oliveira"]
   gem.email         = ["ol.leandro@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = "Rails generators scripts for scaffolding and layout files containing Twitter’s Bootstrap CSS"
+  gem.summary       = ""
+  gem.homepage      = "https://github.com/leandroo/flexi_generators"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")

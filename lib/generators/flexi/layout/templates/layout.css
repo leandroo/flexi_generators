@@ -1,0 +1,8 @@
+/* Your custom css stylesheets goes here */
+body{padding-top:60px;padding-bottom:40px;}
+h1{margin-bottom:20px !important;}
+fieldset legend{margin-bottom:0;}
+.sidebar-nav{padding:9px 0;}
+.navbar .brand{color:#FFFFFF !important;}
+.page-header{padding-bottom:0px !important;}
+.actions{text-align:center !important;}

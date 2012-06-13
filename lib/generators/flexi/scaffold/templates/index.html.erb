@@ -1,0 +1,36 @@
+<%% title("<%= plural_table_name.titleize %>") %>
+<p>
+  <%%= link_to(new_<%= singular_table_name %>_path, :class => 'btn btn-success') do %>
+    <i class="icon-plus icon-white"></i> New <%= singular_table_name %>
+  <%% end %>
+</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <%- unless attributes.empty? -%>
+      <th><%= attributes.first.human_name.titleize %></th>
+      <%- end -%>
+      <th>Created at</th>
+      <th class="actions">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%%= content_tag_for(:tr, @<%= plural_table_name %>) do |<%= singular_table_name %>| %>
+      <td>#<%%= <%= singular_table_name %>.id %></td>
+      <%- unless attributes.empty? -%>
+      <td><strong><%%= link_to("#{<%= singular_table_name %>.<%= attributes.first.name %>}", <%= singular_table_name %>) %></strong></td>
+      <% end -%>
+      <td><%%= <%= singular_table_name %>.created_at %></td>
+      <td class="actions">
+        <%%= link_to(edit_<%= singular_table_name %>_path(<%= singular_table_name %>), :class => 'btn btn-mini btn-primary') do %>
+          <i class="icon-edit icon-white"></i> Edit
+        <%% end %>
+        <%%= link_to(<%= singular_table_name %>, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-danger') do %>
+         <i class="icon-remove icon-white"></i> Delete
+        <%% end %>
+      </td>
+    <%% end %>
+   </tbody>
+</table>

@@ -1,5 +1,0 @@
-Description:
-    Generate a custom scaffold 
-
-Example:
-    rails generate flexi:scaffold Post title:string body:text

@@ -1,0 +1,22 @@
+<%% title("#{controller.action_name.capitalize} <%= singular_table_name %>") %>
+
+<%%= error_messages_for(@<%= singular_table_name %>) %>
+
+<%%= form_for(@<%= singular_table_name %>, :html => { :class => 'form-horizontal' }) do |f| %>
+  <fieldset>
+    <%- attributes.each do |attribute| -%>
+    <div class="control-group">
+      <%%= f.label :<%= attribute.name %>, :class => 'control-label' %>
+      <div class="controls">
+        <%%= f.<%= attribute.field_type %> :<%= attribute.name %>, :class => 'span7' %>
+      </div>
+    </div>
+    <%- end -%>    
+    <div class="form-actions">
+      <%%= button_tag(nil, :class => "btn btn-primary") do |b| %>
+        <i class="icon-ok icon-white"></i> Save
+      <%% end %> or
+      <%%= link_to 'Cancel', <%= index_helper %>_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<%% end %>

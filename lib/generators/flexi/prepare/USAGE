@@ -1,6 +1,0 @@
-Description:
-    The flexi:prepare generator creates a basic layout and config files and
-    helper which will give some structure to a starting Rails app.
-
-Example:
-    rails generate flexi:prepare 

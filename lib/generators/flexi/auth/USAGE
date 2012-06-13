@@ -1,5 +1,0 @@
-Description:
-    The flexi:auth generator creates a custom authentication with Authlogic gem and users CRUD. 
-    
-Example:
-    rails generate flexi:auth 

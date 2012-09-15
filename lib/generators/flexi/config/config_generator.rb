@@ -18,6 +18,7 @@ module Flexi
         inject_into_class "config/application.rb", "Application","\tconfig.time_zone = 'Brasilia'\n"
 
         gem 'will_paginate', '~> 3.0'
+        gem 'nokogiri'
       end
 
     end

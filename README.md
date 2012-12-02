@@ -1,6 +1,6 @@
 # Flexi Generators
 
-Rails generators scripts for scaffolding and layout files containing Twitter’s Bootstrap CSS
+Rails generators scripts for scaffolding and layout files containing Twitter’s Bootstrap CSS.
 
 ## Installation
 
@@ -16,13 +16,42 @@ Or install it yourself as:
 
     $ gem install flexi_generators
 
-## Usage
+## Quickstart
 
-### Available Generators
-  flexi:config
-  flexi:install
-  flexi:layout
-  flexi:scaffold
+You can run following generators to get started.
+
+Install (requires directives to Asset pipeline)
+
+Usage:
+
+    $ rails g flexi:install
+
+Config (My extra configuration files: field error, pagination, locale and inflector)
+
+Usage:
+
+    $ rails g flexi:config
+
+Layout (generates Twitter Bootstrap compatible layout)
+
+Usage:
+
+    $ rails g flexi:layout
+
+Example:
+
+    $ rails g flexi:layout application fixed
+
+Scaffold (generates Twitter Bootstrap compatible scaffold views)
+
+Usage:
+
+    $ rails g flexi:scaffold NAME [field[:type][:index] field[:type][:index]] [options]
+
+Example:
+
+    $ rails g flexi:scaffold Post title description:text
+    rake db:migrate
 
 ## Contributing
 
@@ -31,3 +60,13 @@ Or install it yourself as:
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Autor
+
+Leandro de Oliveira
+
+Blog: [http://leandroo.com.br](http://leandroo.com.br)
+
+Github: [http://github.com/leandroo](http://github.com/leandroo)
+
+Copyright (c) 2012 Leandro de Oliveira, released under the MIT license

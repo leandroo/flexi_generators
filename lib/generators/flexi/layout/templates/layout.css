@@ -5,4 +5,14 @@ fieldset legend{margin-bottom:0;}
 .sidebar-nav{padding:9px 0;}
 .navbar .brand{color:#FFFFFF !important;}
 .page-header{padding-bottom:0px !important;}
-.actions{text-align:center !important;}
+.actions{text-align:center !important;width:15%}
+/* error fields */
+.control-label.error {color: #b94a48;}
+.control-group input.error,
+.control-group select.error,
+.control-group textarea.error { color: #b94a48; border-color: #b94a48; }
+.control-group input.error:focus,
+.control-group select.error:focus,
+.control-group textarea.error:focus {border-color: #953b39; -webkit-box-shadow: 0 0 6px #d59392; -moz-box-shadow: 0 0 6px #d59392; box-shadow: 0 0 6px #d59392;}
+.control-group .error .input-prepend .add-on,
+.control-group .error .input-append .add-on {color: #b94a48;background-color: #f2dede; border-color: #b94a48;}

@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <%%= csrf_meta_tags %>
     <%%= stylesheet "application", :media => "all" %>
-    <%%= yield(:head) %>
+    <%%= yield(:stylesheet) %>
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -72,5 +72,6 @@
     </div><!--/.fluid-container-->
     
     <%%= javascript_include_tag "application" %>
+    <%%= yield(:javascript) %>
   </body>
 </html>

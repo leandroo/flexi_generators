@@ -8,8 +8,8 @@ module Flexi
 
       def add_stylesheets
         if File.exist?('app/assets/stylesheets/application.css')
-          insert_into_file "app/assets/stylesheets/application.css", " *= require bootstrap-responsive\n", :after => "require_self\n"
-          insert_into_file "app/assets/stylesheets/application.css", " *= require bootstrap\n", :after => "require_self\n"
+          insert_into_file "app/assets/stylesheets/application.css", " *= require flexi/bootstrap-responsive\n", :after => "require_self\n"
+          insert_into_file "app/assets/stylesheets/application.css", " *= require flexi/bootstrap\n", :after => "require_self\n"
         else
           copy_file "application.css", "app/assets/stylesheets/application.css"
         end
@@ -17,7 +17,7 @@ module Flexi
 
       def add_javascripts
         if File.exist?('app/assets/javascripts/application.js')
-          insert_into_file "app/assets/javascripts/application.js", "//= require bootstrap\n", :after => "jquery_ujs\n"
+          insert_into_file "app/assets/javascripts/application.js", "//= require flexi/bootstrap\n", :after => "jquery_ujs\n"
         else
           copy_file "application.js", "app/assets/javascripts/application.js"
         end

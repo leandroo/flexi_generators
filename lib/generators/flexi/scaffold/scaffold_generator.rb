@@ -1,5 +1,6 @@
 require 'rails/generators/rails/scaffold/scaffold_generator'
 require 'rails/generators/erb/scaffold/scaffold_generator'
+require 'rails/generators/rails/scaffold_controller/scaffold_controller_generator'
 
 module Flexi
   module Generators
@@ -19,6 +20,14 @@ end
 module Erb
   module Generators
     class ScaffoldGenerator
+      source_root File.expand_path("../templates", __FILE__)
+    end
+  end
+end
+
+module Rails
+  module Generators
+    class ScaffoldControllerGenerator
       source_root File.expand_path("../templates", __FILE__)
     end
   end

@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "flexi_generators"
   gem.require_paths = ["lib"]
   gem.version       = FlexiGenerators::VERSION
+  gem.add_dependency("nokogiri")
+  gem.add_dependency("will_paginate", "~> 3.0")
 end

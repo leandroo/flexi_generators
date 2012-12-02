@@ -25,12 +25,12 @@ Install (requires directives to Asset pipeline)
 Usage:
 
     $ rails g flexi:install
-
+    
 Config (My extra configuration files: field error, pagination, locale and inflector)
 
 Usage:
 
-    $ rails g flexi:config
+    $ rails g flexi:config    
 
 Layout (generates Twitter Bootstrap compatible layout)
 
@@ -47,12 +47,12 @@ Scaffold (generates Twitter Bootstrap compatible scaffold views)
 Usage:
 
     $ rails g flexi:scaffold NAME [field[:type][:index] field[:type][:index]] [options]
-
+    
 Example:
 
     $ rails g flexi:scaffold Post title description:text
     rake db:migrate
-
+    
 ## Contributing
 
 1. Fork it

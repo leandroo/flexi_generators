@@ -1,6 +1,6 @@
 # Flexi Generators
 
-TODO: Write a gem description
+Rails generators scripts for scaffolding and layout files containing Twitter’s Bootstrap CSS
 
 ## Installation
 
@@ -18,7 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Available Generators
+  flexi:config
+  flexi:install
+  flexi:layout
+  flexi:scaffold
 
 ## Contributing
 

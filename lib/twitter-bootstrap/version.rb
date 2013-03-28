@@ -1,5 +1,5 @@
 module FlexiGenerators
   module Rails
-    TWITTER_BOOTSTRAP = "2.0.4"
+    TWITTER_BOOTSTRAP = "2.3.1"
   end
 end

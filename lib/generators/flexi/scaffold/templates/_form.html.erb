@@ -1,5 +1,3 @@
-<%% title("#{controller.action_name.capitalize} <%= singular_table_name %>") %>
-
 <%%= error_messages_for(@<%= singular_table_name %>) %>
 
 <%%= form_for(@<%= singular_table_name %>, :html => { :class => 'form-horizontal' }) do |f| %>

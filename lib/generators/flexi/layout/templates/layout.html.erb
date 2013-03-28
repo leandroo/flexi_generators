@@ -55,10 +55,10 @@
         </div><!--/span-->
 
         <div class="span9">
-          <%%= display_flash_message %>
           <div class="page-header">
-            <%%= content_tag :h1, yield(:title) if show_title %>
+            <%%= content_tag :h3, yield(:title) if show_title %>
           </div>
+          <%%= display_flash_message %>
           <%%= yield %>
         </div><!--/span-->
       </div><!--/row-->

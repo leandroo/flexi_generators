@@ -9,7 +9,7 @@ module Flexi
 
       def insert_menu
         if File.exist?('app/views/layouts/_navbar.html.erb')
-          insert_into_file "app/views/layouts/_navbar.html.erb", "    <%= menu('#{plural_table_name.titleize}', #{plural_table_name}_path) %>\n", :after => "<ul class=\"nav\">\n"  
+          insert_into_file "app/views/layouts/_navbar.html.erb", "    <%= menu('#{plural_table_name.titleize}', #{plural_table_name}_path) %>\n", :after => "<ul class=\"nav\">\n"
         end
       end
 

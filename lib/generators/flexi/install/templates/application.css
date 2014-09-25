@@ -10,6 +10,6 @@
  *
  *= require_self
  *= require flexi/bootstrap
- *= require flexi/bootstrap-responsive
+ *= require flexi/bootstrap-theme
  *= require_tree .
 */

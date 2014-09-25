@@ -14,11 +14,11 @@ module Flexi
         copy_file "field_error.rb", "config/initializers/field_error.rb"
         copy_file "will_paginate.rb", "config/initializers/will_paginate.rb"
 
-        inject_into_class "config/application.rb", "Application","\tconfig.i18n.default_locale = 'pt-BR'\n"
-        inject_into_class "config/application.rb", "Application","\tconfig.time_zone = 'Brasilia'\n"
+        inject_into_class "config/application.rb", "Application","    config.i18n.default_locale = 'pt-BR'\n"
+        inject_into_class "config/application.rb", "Application","    config.time_zone = 'Brasilia'\n"
+        inject_into_class "config/application.rb", "Application","    config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.yml')]\n"
 
         gem 'will_paginate', '~> 3.0'
-        gem 'nokogiri'
       end
 
     end

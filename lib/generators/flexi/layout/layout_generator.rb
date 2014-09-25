@@ -7,15 +7,13 @@ module Flexi
       source_root File.expand_path("../templates", __FILE__)
       
       argument :layout_name, :type => :string, :default => "application"
-      argument :layout_type, :type => :string, :default => "fluid",
-               :banner => "*fixed or fluid"
       argument :dashboard_name, :type => :string, :default => "dashboard"
       attr_reader :app_name, :container_class
 
       def generate_layout
         app = ::Rails.application
         @app_name = app.class.to_s.split("::").first
-        @container_class = layout_type == "fluid" ? "container-fluid" : "container"
+        remove_file "app/views/layouts/#{layout_name}.html.erb"
         template "layout.html.erb", "app/views/layouts/#{layout_name}.html.erb"
         generate "controller", "#{dashboard_name} index"
         remove_file "app/views/#{dashboard_name}/index.html.erb"
@@ -26,7 +24,8 @@ module Flexi
       def add_stylesheets
         copy_file 'layout.css', 'app/assets/stylesheets/layout.css'
         if File.exist?('app/assets/stylesheets/application.css')
-          insert_into_file "app/assets/stylesheets/application.css", " *= require layout\n", :after => "require_self\n"
+          gsub_file "app/assets/stylesheets/application.css", " *= require_tree .\n", ""
+          insert_into_file "app/assets/stylesheets/application.css", " *= require layout\n", :after => "bootstrap-theme\n"
         else
           copy_file "application.css", "app/assets/stylesheets/application.css"
         end

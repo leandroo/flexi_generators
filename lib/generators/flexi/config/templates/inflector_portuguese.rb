@@ -48,10 +48,7 @@ module Inflector
     inflect.singular(/(japon|escoc|ingl|dinamarqu|fregu|portugu)eses$/i,  '\1ês')
     inflect.singular(/^(g|)ases$/i,  '\1ás')
 
-    # #irregulares
 #    irregulares = {'país' => 'paises'}
-#
-#
 #    irregulares.each do |key, value|
 #      inflect.plural(/^#{key.to_s}$/, value)
 #      inflect.singular(/^#{value}$/, key.to_s)

@@ -8,7 +8,7 @@ module Flexi
 
       def add_stylesheets
         if File.exist?('app/assets/stylesheets/application.css')
-          insert_into_file "app/assets/stylesheets/application.css", " *= require flexi/bootstrap-responsive\n", :after => "require_self\n"
+          insert_into_file "app/assets/stylesheets/application.css", " *= require flexi/bootstrap-theme\n", :after => "require_self\n"
           insert_into_file "app/assets/stylesheets/application.css", " *= require flexi/bootstrap\n", :after => "require_self\n"
         else
           copy_file "application.css", "app/assets/stylesheets/application.css"
